@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="170" viewBox="0 0 760 170" font-family="'Cascadia Code','Fira Code',monospace"><title>final boss — senior architect HP drained</title>
+  <rect x="0" y="0" width="760" height="170" rx="10" fill="#0A0A10" stroke="#FFB000" stroke-width="1.5"/>
+  <text x="30" y="34" font-size="13" letter-spacing="3" fill="#FFB000">⚔ FINAL BOSS — SENIOR ARCHITECT LVL 99</text>
+  <text x="730" y="34" text-anchor="end" font-size="12" fill="#5c5c70">HP</text>
+  <rect x="30" y="48" width="700" height="26" rx="6" fill="#12121c" stroke="#3a3a55"/>
+  <rect x="32" y="50" width="696" height="22" rx="5" fill="#DC143C">
+    <animate attributeName="width" values="696;480;320;140;0;0;696" keyTimes="0;0.25;0.5;0.75;0.85;0.92;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#39FF14;#FFB000;#FF4500;#DC143C;#DC143C;#39FF14;#39FF14" keyTimes="0;0.25;0.5;0.75;0.85;0.92;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <g font-size="16" font-weight="800" text-anchor="middle">
+    <text x="380" y="110" fill="#FF1744" opacity="0">CRITICAL 9999
+      <animate attributeName="opacity" values="0;1;0;0;1;0;0" calcMode="discrete" keyTimes="0;0.25;0.3;0.5;0.75;0.8;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="380" y="110" fill="#B026FF" opacity="0">OVERKILL 99999
+      <animate attributeName="opacity" values="0;0;0;1;0;0" calcMode="discrete" keyTimes="0;0.5;0.75;0.85;0.92;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="380" y="110" fill="#39FF14" opacity="0">☠ BOSS DEFEATED — LOOT: RESPECT +∞
+      <animate attributeName="opacity" values="0;0;0;0;1;1" calcMode="discrete" keyTimes="0;0.75;0.85;0.87;0.92;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  <text x="380" y="140" text-anchor="middle" font-size="11" letter-spacing="2" fill="#8a8aa0">weapon: <tspan fill="#DC143C">kernel · asm · rust</tspan> — respawn: <tspan fill="#5c5c70">never</tspan></text>
+  <text x="380" y="158" text-anchor="middle" font-size="10" letter-spacing="3" fill="#3a3a55">12s MASTER LOOP · GPU-SAFE TRANSFORM/OPACITY ONLY</text>
+</svg>

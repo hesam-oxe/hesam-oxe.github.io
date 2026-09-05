@@ -4,22 +4,35 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>HESAM JAMALI — ring-0 fortress</title>
-<meta name="description" content="HESAM JAMALI — full-metal stack, kernel-level operator. Seniors terminated: 1337."/>
+<meta name="description" content="HESAM JAMALI — full-metal stack, kernel-level operator. Seniors terminated: 1337. WebGL war-room, live terminal, zero mercy."/>
+<link rel="canonical" href="https://hesam-oxe.github.io/"/>
+<meta name="theme-color" content="#0a0a10"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="HESAM JAMALI — ring-0 fortress"/>
+<meta property="og:description" content="Full-metal stack · kernel-level operator · seniors terminated: 1337"/>
+<meta property="og:url" content="https://hesam-oxe.github.io/"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HESAM JAMALI — ring-0 fortress"/>
+<meta name="twitter:description" content="Full-metal stack · kernel-level operator · seniors terminated: 1337"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="manifest" href="manifest.webmanifest"/>
 <link rel="stylesheet" href="styles.css"/>
 <script type="importmap">
 { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
 </script>
 </head>
 <body>
-<div class="ticker">⚠ INTRUDER DETECTED — SENIOR DEV ENTERED RING-0 · NEUTRALIZED IN 0.03s · 1337 TERMINATED · MERCY NOT FOUND ·</div>
-<nav>
+<a class="skip" href="#main">skip to content</a>
+<div class="ticker" aria-hidden="true"><span>⚠ INTRUDER DETECTED — SENIOR DEV ENTERED RING-0 · NEUTRALIZED IN 0.03s · 1337 TERMINATED · MERCY NOT FOUND ·&nbsp;</span><span>⚠ INTRUDER DETECTED — SENIOR DEV ENTERED RING-0 · NEUTRALIZED IN 0.03s · 1337 TERMINATED · MERCY NOT FOUND ·&nbsp;</span></div>
+<nav aria-label="sections">
   <a href="#boot">BOOT</a><a href="#panic">PANIC</a><a href="#shell">SHELL</a><a
-  href="#kills">KILLS</a><a href="#radar">RADAR</a><a href="#contact">CONTACT</a>
+  href="#kills">KILLS</a><a href="#boss">BOSS</a><a href="#radar">RADAR</a><a
+  href="#rain">RAIN</a><a href="#repos">ARSENAL</a><a href="#contact">CONTACT</a>
   <a class="gh" href="https://github.com/hesam-oxe">GitHub ⛓</a>
 </nav>
 <header class="hero">
   <canvas id="hero3d" aria-label="3D hell core (WebGL, optional)"></canvas>
-  <img class="hero-fallback" src="assets/glitch-name.svg" alt="HESAM JAMALI"/>
+  <img class="hero-fallback" src="assets/glitch-name.svg" alt="HESAM JAMALI" fetchpriority="high"/>
   <p class="sub">FULL-METAL STACK · KERNEL-LEVEL OPERATOR</p>
   <p class="kill">SENIORS TERMINATED: <span data-count="1337">0</span> · MERCY: NOT FOUND</p>
   <div class="cta">
@@ -27,21 +40,21 @@
     <a href="https://github.com/hesam-oxe">⛓ profile</a>
   </div>
 </header>
-<main>
-  <section id="boot">
+<main id="main">
+  <section id="boot" class="reveal">
     <h2>⬢ BOOT SEQUENCE</h2>
-    <img src="assets/boot-sequence.svg" alt="kernel boot — soul mounted, mercy not found"/>
+    <img src="assets/boot-sequence.svg" alt="kernel boot — soul mounted, mercy not found" loading="lazy"/>
   </section>
-  <section id="panic">
+  <section id="panic" class="reveal">
     <h2>☠ KERNEL PANIC — REAL DUMP</h2>
-    <img src="assets/kernel-panic.svg" alt="kernel panic — senior dev detected"/>
+    <img src="assets/kernel-panic.svg" alt="kernel panic — senior dev detected" loading="lazy"/>
   </section>
-  <section id="shell">
-    <h2>⬢ LIVE SHELL — type <code>help</code></h2>
-    <div class="term" id="term" role="log" aria-label="emulated ring-0 shell"></div>
-    <form id="termform"><span>root@hellfire:~#</span><input id="terminput" autocomplete="off" spellcheck="false" aria-label="shell input"/></form>
+  <section id="shell" class="reveal">
+    <h2>⬢ LIVE SHELL — type <code>help</code> · <code>Tab</code> completes · <code>↑↓</code> history</h2>
+    <div class="term" id="term" role="log" aria-label="emulated ring-0 shell" aria-live="polite"></div>
+    <form id="termform"><span aria-hidden="true">root@hellfire:~#</span><input id="terminput" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="shell input" maxlength="120"/></form>
   </section>
-  <section id="kills">
+  <section id="kills" class="reveal">
     <h2>⬢ KILL BOARD</h2>
     <div class="cards">
       <div><small>SENIOR DEVS</small><b data-count="1337">0</b></div>
@@ -49,31 +62,58 @@
       <div><small>BUGS EXTERMINATED</small><b data-count="9999">0</b></div>
       <div><small>JUNIORS SPARED</small><b>0</b></div>
     </div>
-    <img src="assets/kill-board.svg" alt="kill board"/>
+    <img src="assets/kill-board.svg" alt="kill board" loading="lazy"/>
   </section>
-  <section id="radar">
+  <section id="boss" class="reveal">
+    <h2>⚔ FINAL BOSS — SENIOR ARCHITECT LVL 99</h2>
+    <div class="bossbar" role="img" aria-label="boss health draining to zero">
+      <div class="bossfill" id="bossfill"></div>
+      <span class="bosslabel" id="bosslabel">HP 100%</span>
+    </div>
+    <p class="mono" id="bosslog">weapon: kernel · asm · rust — respawn: never</p>
+    <img src="assets/final-boss.svg" alt="final boss artwork" loading="lazy"/>
+  </section>
+  <section id="radar" class="reveal">
     <h2>⬢ WAR-ROOM RADAR</h2>
     <canvas id="radarcv" width="680" height="300" aria-label="radar sweep — 3 hostile seniors locked"></canvas>
     <p class="mono">SCAN: entire stack · CONTACTS: <b class="red">3 HOSTILE SENIORS</b> · ETA: 0.03s · MERCY: 404</p>
   </section>
-  <section id="feeds">
-    <h2>⬢ TRANSMISSIONS</h2>
-    <p>Live pipelines run on the <a href="https://github.com/hesam-oxe/hesam-oxe">profile repo</a> (blog RSS · activity · WakaTime). This fortress is the static war-front — zero backend, nothing to kill.</p>
+  <section id="rain" class="reveal">
+    <h2>⬢ OPCODE RAIN — x86_64 · LIVE CANVAS</h2>
+    <canvas id="raincv" width="680" height="240" aria-label="opcode rain — 0xDEAD 0xBEEF SEGFAULT"></canvas>
   </section>
-  <section id="contact">
+  <section id="skyline" class="reveal">
+    <h2>⬢ SECTOR 7 — CONQUERED SKYLINE</h2>
+    <img src="assets/skyline-hell.svg" alt="conquered skyline — smoke still rising" loading="lazy"/>
+  </section>
+  <section id="repos" class="reveal">
+    <h2>⬢ LIVE ARSENAL — fresh from GitHub API</h2>
+    <div class="repos" id="repos"><p class="mono">summoning repos…</p></div>
+  </section>
+  <section id="activity" class="reveal">
+    <h2>⚡ RECENT COMBAT ACTIVITY</h2>
+    <ul class="feed" id="activity"><li class="mono">listening for transmissions…</li></ul>
+  </section>
+  <section id="feeds" class="reveal">
+    <h2>⬢ TRANSMISSIONS</h2>
+    <p>Scheduled pipelines run on the <a href="https://github.com/hesam-oxe/hesam-oxe">profile repo</a> (blog RSS · activity · WakaTime). This fortress is the static war-front — zero backend, nothing to kill.</p>
+  </section>
+  <section id="contact" class="reveal">
     <h2>⬢ ESTABLISH CONTACT</h2>
     <p class="quote">“I don't write code. I forge weapons.”</p>
     <p>
       <a href="https://github.com/hesam-oxe">⛓ GitHub</a> ·
       <a href="https://www.linkedin.com/in/hesam-jamali-218b93414/">🔗 LinkedIn</a> ·
-      <a href="mailto:chngyzkhanwhsht@gmail.com">📧 Email</a>
+      <a href="mailto:chngyzkhanwhsht@gmail.com">📧 Email</a> ·
+      <button id="copyemail" type="button">⧉ copy email</button>
     </p>
   </section>
 </main>
 <footer>
-  <img src="assets/hellfire.svg" alt="hellfire outro"/>
+  <img src="assets/hellfire.svg" alt="hellfire outro" loading="lazy"/>
   <p>⚠️ YOU HAVE REACHED THE END. THE FIRE HASN'T. · <a href="https://github.com/hesam-oxe">hesam-oxe</a></p>
 </footer>
+<button id="totop" type="button" aria-label="back to top">▲</button>
 <script src="app.js" defer></script>
 <script type="module">
 try {
@@ -91,13 +131,19 @@ try {
     new THREE.TorusGeometry(2.2, 0.02, 8, 80),
     new THREE.MeshBasicMaterial({color: 0x00e5ff, transparent: true, opacity: 0.5})
   );
-  ring.rotation.x = 1.2;
-  s.add(core, ring);
+  const ring2 = new THREE.Mesh(
+    new THREE.TorusGeometry(2.7, 0.012, 8, 80),
+    new THREE.MeshBasicMaterial({color: 0xb026ff, transparent: true, opacity: 0.35})
+  );
+  ring.rotation.x = 1.2; ring2.rotation.x = 1.9; ring2.rotation.y = 0.4;
+  s.add(core, ring, ring2);
   const fit = () => { const w = cv.clientWidth || 600, h = 220; r.setSize(w, h, false); c.aspect = w / h; c.updateProjectionMatrix(); };
   fit(); addEventListener('resize', fit);
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   (function loop(t) {
-    core.rotation.y = t / 2400; core.rotation.x = t / 3600; ring.rotation.z = t / 5000;
-    r.render(s, c); requestAnimationFrame(loop);
+    if (!still) { core.rotation.y = t / 2400; core.rotation.x = t / 3600; ring.rotation.z = t / 5000; ring2.rotation.z = -t / 7000; }
+    r.render(s, c);
+    if (!still) requestAnimationFrame(loop);
   })(0);
 } catch (e) { document.getElementById('hero3d').style.display = 'none'; }
 </script>
