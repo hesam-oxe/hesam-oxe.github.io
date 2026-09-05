@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="60" viewBox="0 0 760 60" font-family="'Cascadia Code','Fira Code',Consolas,Menlo,monospace"><title>hellfire wall — 12s master loop</title>
+  <defs>
+    <linearGradient id="lavaG" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#3D0C14"/>
+      <stop offset="0.4" stop-color="#8B0000"/>
+      <stop offset="0.75" stop-color="#DC143C"/>
+      <stop offset="1" stop-color="#FFB000"/>
+    </linearGradient>
+    <linearGradient id="lavaG2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#2A0A3D"/>
+      <stop offset="0.5" stop-color="#5A1E7A"/>
+      <stop offset="1" stop-color="#B026FF"/>
+    </linearGradient>
+    <radialGradient id="emberG" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFB000" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FF4500" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- dark base -->
+  <rect x="0" y="0" width="760" height="60" fill="#0A0A10"/>
+
+  <!-- hellfire tongues layer 1 : crimson, slow, tall -->
+  <g>
+    <path d="M0,60 L0,34 Q22,20 34,32 Q52,8 70,30 Q88,22 104,36 Q124,12 142,34 Q158,26 176,38 Q196,10 214,32 Q230,24 248,36 Q268,14 286,34 Q302,26 320,38 Q340,8 358,32 Q374,24 392,36 Q412,12 430,34 Q446,26 464,38 Q484,10 502,32 Q518,24 536,36 Q556,12 574,34 Q590,26 608,38 Q628,8 646,32 Q662,24 680,36 Q700,14 718,34 Q734,26 760,36 L760,60 Z" fill="url(#lavaG)" opacity="0.95">
+      <animate attributeName="d"
+        values="M0,60 L0,34 Q22,20 34,32 Q52,8 70,30 Q88,22 104,36 Q124,12 142,34 Q158,26 176,38 Q196,10 214,32 Q230,24 248,36 Q268,14 286,34 Q302,26 320,38 Q340,8 358,32 Q374,24 392,36 Q412,12 430,34 Q446,26 464,38 Q484,10 502,32 Q518,24 536,36 Q556,12 574,34 Q590,26 608,38 Q628,8 646,32 Q662,24 680,36 Q700,14 718,34 Q734,26 760,36 L760,60 Z;
+                M0,60 L0,30 Q20,10 38,30 Q54,24 72,34 Q92,14 110,32 Q126,20 144,36 Q164,10 182,30 Q198,24 216,38 Q236,16 254,34 Q270,22 288,36 Q308,12 326,32 Q342,24 360,38 Q380,14 398,34 Q414,22 432,36 Q452,10 470,32 Q486,24 504,38 Q524,16 542,34 Q558,22 576,36 Q596,12 614,32 Q630,24 648,38 Q668,14 686,34 Q702,22 720,36 Q738,24 760,32 L760,60 Z;
+                M0,60 L0,34 Q22,20 34,32 Q52,8 70,30 Q88,22 104,36 Q124,12 142,34 Q158,26 176,38 Q196,10 214,32 Q230,24 248,36 Q268,14 286,34 Q302,26 320,38 Q340,8 358,32 Q374,24 392,36 Q412,12 430,34 Q446,26 464,38 Q484,10 502,32 Q518,24 536,36 Q556,12 574,34 Q590,26 608,38 Q628,8 646,32 Q662,24 680,36 Q700,14 718,34 Q734,26 760,36 L760,60 Z"
+        dur="12s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- hellfire tongues layer 2 : plasma, faster, shorter -->
+  <g opacity="0.8">
+    <path d="M0,60 L0,44 Q28,34 48,44 Q76,28 100,42 Q126,36 150,44 Q178,26 204,42 Q230,36 254,44 Q282,30 308,42 Q334,36 360,44 Q388,28 414,42 Q440,36 466,44 Q494,26 520,42 Q546,36 572,44 Q600,30 626,42 Q652,36 678,44 Q706,28 734,42 L760,44 L760,60 Z" fill="url(#lavaG2)">
+      <animate attributeName="d"
+        values="M0,60 L0,44 Q28,34 48,44 Q76,28 100,42 Q126,36 150,44 Q178,26 204,42 Q230,36 254,44 Q282,30 308,42 Q334,36 360,44 Q388,28 414,42 Q440,36 466,44 Q494,26 520,42 Q546,36 572,44 Q600,30 626,42 Q652,36 678,44 Q706,28 734,42 L760,44 L760,60 Z;
+                M0,60 L0,42 Q26,28 52,42 Q78,32 104,44 Q130,26 156,42 Q182,34 208,44 Q234,28 260,42 Q286,34 312,44 Q338,26 364,42 Q390,32 416,44 Q442,28 468,42 Q494,34 520,44 Q546,26 572,42 Q598,32 624,44 Q650,28 676,42 Q702,34 728,44 L760,42 L760,60 Z;
+                M0,60 L0,44 Q28,34 48,44 Q76,28 100,42 Q126,36 150,44 Q178,26 204,42 Q230,36 254,44 Q282,30 308,42 Q334,36 360,44 Q388,28 414,42 Q440,36 466,44 Q494,26 520,42 Q546,36 572,44 Q600,30 626,42 Q652,36 678,44 Q706,28 734,42 L760,44 L760,60 Z"
+        dur="12s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- rising embers -->
+  <g fill="url(#emberG)">
+    <circle cx="120" cy="55" r="5">
+      <animate attributeName="cy" values="58;-10" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.2;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="290" cy="55" r="4">
+      <animate attributeName="cy" values="58;-10" begin="1.1s" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.2;1" begin="1.1s" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="55" r="6">
+      <animate attributeName="cy" values="58;-10" begin="0.6s" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.2;1" begin="0.6s" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="610" cy="55" r="4.5">
+      <animate attributeName="cy" values="58;-10" begin="2s" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.2;1" begin="2s" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="55" r="3.5">
+      <animate attributeName="cy" values="58;-10" begin="1.6s" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.2;1" begin="1.6s" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="55" r="3">
+      <animate attributeName="cy" values="58;-10" begin="0.3s" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.2;1" begin="0.3s" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

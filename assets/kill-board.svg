@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" font-family="'Cascadia Code','Fira Code',Consolas,Menlo,monospace"><title>kill board — 1337 seniors terminated</title>
+  <rect x="0" y="0" width="760" height="220" rx="10" fill="#0A0A10" stroke="#FF1744" stroke-width="1.5"/>
+  <text x="30" y="34" font-size="14" letter-spacing="4" fill="#F2F2F5">// KILL-BOARD <tspan fill="#5c5c70">— seniors terminated · live count</tspan></text>
+  <circle cx="722" cy="29" r="5" fill="#FF1744">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <g text-anchor="middle">
+    <rect x="30" y="50" width="220" height="70" rx="8" fill="#12060B" stroke="#DC143C"/>
+    <text x="140" y="74" font-size="11" letter-spacing="2" fill="#8a8aa0">SENIOR DEVS</text>
+    <text x="140" y="106" font-size="28" font-weight="800" fill="#DC143C">1337
+      <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </text>
+    <rect x="30" y="132" width="220" height="70" rx="8" fill="#12060B" stroke="#B026FF"/>
+    <text x="140" y="156" font-size="11" letter-spacing="2" fill="#8a8aa0">ARCHITECTS</text>
+    <text x="140" y="188" font-size="28" font-weight="800" fill="#B026FF">666</text>
+    <rect x="270" y="50" width="220" height="70" rx="8" fill="#12060B" stroke="#00E5FF"/>
+    <text x="380" y="74" font-size="11" letter-spacing="2" fill="#8a8aa0">BUGS EXTERMINATED</text>
+    <text x="380" y="106" font-size="28" font-weight="800" fill="#00E5FF">9999+</text>
+    <rect x="270" y="132" width="220" height="70" rx="8" fill="#12060B" stroke="#39FF14"/>
+    <text x="380" y="156" font-size="11" letter-spacing="2" fill="#8a8aa0">UPTIME</text>
+    <text x="380" y="188" font-size="28" font-weight="800" fill="#39FF14">∞</text>
+    <rect x="510" y="50" width="220" height="152" rx="8" fill="#1A080D" stroke="#FFB000" stroke-width="1.5"/>
+    <text x="620" y="76" font-size="11" letter-spacing="2" fill="#FFB000">JUNIORS SPARED</text>
+    <text x="620" y="120" font-size="52" font-weight="800" fill="#FFB000">0
+      <animate attributeName="opacity" values="1;1;0.3;0.3" keyTimes="0;0.5;0.5;1" dur="1.4s" repeatCount="indefinite"/>
+    </text>
+    <text x="620" y="148" font-size="11" fill="#8a8aa0">NO MERCY PROTOCOL</text>
+    <text x="620" y="172" font-size="11" fill="#DC143C" font-weight="700">ACTIVE ☠</text>
+  </g>
+  <text x="380" y="214" text-anchor="middle" font-size="9" letter-spacing="3" fill="#3a3a55">ALL COUNTERS DRIFT UPWARD · 12s MASTER LOOP</text>
+</svg>

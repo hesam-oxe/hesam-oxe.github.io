@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" font-family="'Cascadia Code','Fira Code',Consolas,Menlo,monospace"><title>kernel boot sequence — soul mounted, mercy not found</title>
+  <defs>
+    <linearGradient id="termGlow5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DC143C" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#B026FF" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="740" height="360" rx="12" fill="#0A0A10" stroke="#DC143C" stroke-width="1.5" opacity="0.97"/>
+  <rect x="10" y="10" width="740" height="360" rx="12" fill="url(#termGlow5)"/>
+  <rect x="11.5" y="11.5" width="737" height="357" rx="11" fill="none" stroke="#B026FF" stroke-width="0.6" opacity="0.35"/>
+  <rect x="11.5" y="11.5" width="737" height="34" rx="11" fill="#101018"/>
+  <line x1="12" y1="45" x2="748" y2="45" stroke="#DC143C" stroke-width="1" opacity="0.5"/>
+  <circle cx="34" cy="28" r="5.5" fill="#DC143C"/>
+  <circle cx="54" cy="28" r="5.5" fill="#B026FF"/>
+  <circle cx="74" cy="28" r="5.5" fill="#00E5FF"/>
+  <text x="380" y="33" text-anchor="middle" font-size="13" fill="#8a8aa0">root@hesam-oxe: ~/kernel — summon_operator.sh · v5</text>
+  <g font-size="14.5">
+    <text x="34" y="80" fill="#39FF14">root@hesam-oxe:~# ./summon_operator.sh --annihilate
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.03;0.05;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="112" fill="#E6E6E6">[ <tspan fill="#39FF14"> OK  </tspan>] mounting /dev/talent ................ done
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.12;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="144" fill="#E6E6E6">[ <tspan fill="#39FF14"> OK  </tspan>] mounting /dev/soul ................. done
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.22;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="176" fill="#E6E6E6">[ <tspan fill="#39FF14"> OK  </tspan>] loading modules :: asm·rust·go·c·cpp·py·ts
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.32;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="208" fill="#E6E6E6">[ <tspan fill="#FF1744">FAIL</tspan>] mercy.service not found — <tspan fill="#DC143C">good.</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.40;0.42;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="240" fill="#E6E6E6">[ <tspan fill="#FFB000">WARN </tspan>] social-life.service not found — skipping
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.50;0.52;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="272" fill="#E6E6E6">[ <tspan fill="#00E5FF"> OK  </tspan>] fear module loaded → <tspan font-weight="700" fill="#DC143C">1337 targets locked</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.60;0.62;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="304" fill="#E6E6E6">[ <tspan fill="#00E5FF"> OK  </tspan>] privilege escalation → <tspan font-weight="700" fill="#DC143C">ROOT</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.68;0.70;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="34" y="336" fill="#DC143C" font-weight="700">[ BOOT ] HESAM JAMALI :: KERNEL-LEVEL OPERATOR READY
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.78;0.80;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  <rect x="12" y="0" width="736" height="2.5" fill="#DC143C" opacity="0.13">
+    <animate attributeName="y" values="46;366;46" dur="12s" repeatCount="indefinite"/>
+  </rect>
+</svg>

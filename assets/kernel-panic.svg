@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" font-family="'Cascadia Code','Fira Code',Consolas,Menlo,monospace"><title>kernel panic — senior dev detected</title>
+  <rect x="0" y="0" width="760" height="300" rx="10" fill="#050508" stroke="#FF1744" stroke-width="1.5"/>
+  <rect x="0" y="0" width="760" height="44" rx="10" fill="#1A080D"/>
+  <text x="30" y="28" font-size="15" font-weight="800" letter-spacing="3" fill="#FF1744">☠ KERNEL PANIC — senior dev detected at ring-3
+    <animate attributeName="opacity" values="1;0.4;1" dur="1.4s" repeatCount="indefinite"/>
+  </text>
+  <g font-size="12.5" fill="#E6E6E6">
+    <text x="30" y="72">RIP: 0010:[&lt;ffffffff81000000&gt;] panic+0x666/0x999 — mercy not found
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.08;0.12;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="94">RAX: deadbeef RBX: 00000000 RCX: cafef00d RDX: 1337c0de
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.18;0.22;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="116">Call Trace: ego_inflate → overengineer → meeting_hell → <tspan fill="#FF1744">neutralized</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.34;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="138" fill="#8a8aa0">Kernel Offset: 0x66600000 from 0xffffffff81000000 (relocation range: HELL)
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.46;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="160" fill="#B026FF">Fix: operator hesam-oxe took control — threat contained in 0.03s
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.54;0.58;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="190" fill="#39FF14">root@hellfire:~# dmesg | grep -i fear<tspan fill="#39FF14">█</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.70;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="212" fill="#DC143C">[66666.666666] fear: module loaded — 1337 targets locked
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.74;0.78;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="234" fill="#DC143C">[66666.696969] mercy: module NOT FOUND — good.
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.82;0.86;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="262" font-size="11" letter-spacing="2" fill="#5c5c70">— press any key to tremble · 12s loop · self-hosted —</text>
+  </g>
+  <rect x="700" y="12" width="10" height="20" fill="#FF1744">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

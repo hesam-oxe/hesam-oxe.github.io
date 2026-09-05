@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="210" viewBox="0 0 760 210" font-family="'Cascadia Code','Fira Code',Consolas,Menlo,monospace"><title>HESAM JAMALI glitch header v5</title>
+  <defs>
+    <pattern id="scan5" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1.6" y="0" fill="#ffffff" opacity="0.03"/>
+    </pattern>
+    <linearGradient id="vig5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DC143C" stop-opacity="0"/>
+      <stop offset="1" stop-color="#DC143C" stop-opacity="0.09"/>
+    </linearGradient>
+    <linearGradient id="tearG5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#DC143C" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00E5FF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#DC143C" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="tearTop5"><rect x="0" y="68" width="760" height="14"/></clipPath>
+    <clipPath id="tearMid5"><rect x="0" y="94" width="760" height="10"/></clipPath>
+    <clipPath id="tearBot5"><rect x="0" y="116" width="760" height="16"/></clipPath>
+    <clipPath id="tearX5"><rect x="0" y="130" width="760" height="8"/></clipPath>
+  </defs>
+  <!-- v5 HELLBEAST : 12s master loop, heavier shake + double flash + 4 tear bands -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;-6 3;5 -3;-4 2;4 -2;0 0;0 0" keyTimes="0;0.895;0.905;0.915;0.925;0.935;0.945;1" dur="12s" repeatCount="indefinite"/>
+  <g stroke="#DC143C" stroke-width="2.5" fill="none" opacity="0.9">
+    <path d="M14 30 L14 14 L30 14"/>
+    <path d="M730 14 L746 14 L746 30"/>
+    <path d="M746 180 L746 196 L730 196"/>
+    <path d="M30 196 L14 196 L14 180"/>
+  </g>
+  <rect x="0" y="0" width="760" height="210" fill="url(#scan5)"/>
+  <rect x="0" y="155" width="760" height="55" fill="url(#vig5)"/>
+  <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#DC143C" opacity="0.85">HESAM JAMALI
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;-7 3;0 0;5 -3;0 0;-3 2;0 0" keyTimes="0;0.80;0.83;0.86;0.89;0.92;0.95;1" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.85;0.85;0;0.85;0.85" keyTimes="0;0.83;0.845;0.86;1" dur="6s" repeatCount="indefinite"/>
+  </text>
+  <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#00E5FF" opacity="0.6">HESAM JAMALI
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;6 -3;0 0;-6 3;0 0;3 -2;0 0" keyTimes="0;0.78;0.81;0.84;0.87;0.90;0.94;1" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.6;0;0.6;0.6" keyTimes="0;0.81;0.825;0.84;1" dur="4s" repeatCount="indefinite"/>
+  </text>
+  <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#B026FF" opacity="0.5">HESAM JAMALI
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;3 4;0 0;-4 -3;0 0" keyTimes="0;0.87;0.90;0.93;0.96;1" dur="6s" repeatCount="indefinite"/>
+  </text>
+  <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#F2F2F5">HESAM JAMALI</text>
+  <g clip-path="url(#tearTop5)">
+    <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#F2F2F5" opacity="0">HESAM JAMALI
+      <animate attributeName="opacity" values="0;0;1;0;0;1;0;0" keyTimes="0;0.55;0.565;0.58;0.62;0.635;0.65;1" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;24 0;0 0;-18 0;0 0" keyTimes="0;0.55;0.565;0.58;0.635;0.65;1" dur="6s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  <g clip-path="url(#tearMid5)">
+    <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#00E5FF" opacity="0">HESAM JAMALI
+      <animate attributeName="opacity" values="0;0;1;0;0;1;0;0" keyTimes="0;0.30;0.315;0.33;0.33;0.345;0.36;1" dur="4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;-28 0;0 0;20 0;0 0" keyTimes="0;0.30;0.315;0.33;0.345;0.36;1" dur="4s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  <g clip-path="url(#tearBot5)">
+    <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#DC143C" opacity="0">HESAM JAMALI
+      <animate attributeName="opacity" values="0;0;1;0;0;1;0;0" keyTimes="0;0.72;0.735;0.75;0.75;0.765;0.78;1" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;32 0;0 0;-24 0;0 0" keyTimes="0;0.72;0.735;0.75;0.765;0.78;1" dur="6s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  <g clip-path="url(#tearX5)">
+    <text x="380" y="102" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="6" fill="#FFB000" opacity="0">HESAM JAMALI
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.44;0.455;0.47;1" dur="12s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-30 0;22 0;0 0;0 0" keyTimes="0;0.44;0.455;0.47;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  <rect x="-20" y="0" width="14" height="210" fill="url(#tearG5)" opacity="0.4">
+    <animate attributeName="x" values="-20;770" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="0" width="760" height="2.5" fill="#DC143C" opacity="0.18">
+    <animate attributeName="y" values="0;210;0" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <text x="380" y="142" text-anchor="middle" font-size="15" letter-spacing="8" fill="#B026FF" opacity="0.95">FULL-METAL STACK · KERNEL-LEVEL OPERATOR
+    <animate attributeName="opacity" values="0.95;0.35;0.95" dur="4s" repeatCount="indefinite"/>
+  </text>
+  <text x="380" y="164" text-anchor="middle" font-size="11" letter-spacing="4" fill="#DC143C">SENIORS TERMINATED: 1337 · MERCY: NOT FOUND
+    <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <g font-size="10" fill="#5c5c70" letter-spacing="2">
+    <text x="34" y="30">SYS://PROFILE_v5.0_HELLBEAST</text>
+    <text x="640" y="30" fill="#DC143C">◉ REC</text>
+  </g>
+  <text x="712" y="192" font-size="13" fill="#39FF14" opacity="0.9">█
+    <animate attributeName="opacity" values="0.9;0.9;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/>
+  </text>
+  <rect x="0" y="0" width="760" height="210" fill="#FFFFFF" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.9;0;0;0.7;0;0" calcMode="discrete" keyTimes="0;0.445;0.455;0.465;0.895;0.905;0.915;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  </g>
+</svg>
