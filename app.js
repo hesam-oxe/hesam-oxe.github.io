@@ -8,6 +8,11 @@
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rev.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { RM ? el.classList.add('in') : rev.observe(el); });
+  // safety net: never leave content invisible (print, no-IO, odd viewports)
+  setTimeout(function () { document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+    if (el.getBoundingClientRect().top < innerHeight * 3) el.classList.add('in');
+  }); }, 2500);
+  addEventListener('beforeprint', function () { document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); }); });
 
   // counters
   var cio = new IntersectionObserver(function (es) {
@@ -33,7 +38,8 @@
   }
 
   // radar
-  var cv = document.getElementById('radarcv'), ctx = cv.getContext('2d');
+  var cv = document.getElementById('radarcv');
+  if (cv) { var ctx = cv.getContext('2d');
   var W = cv.width, H = cv.height, cx = 170, cy = 150, R = 120;
   var blips = [{ x: 215, y: 115, l: 'SR-DEV-01' }, { x: 130, y: 180, l: 'ARCH-07' }, { x: 195, y: 185, l: 'JR-404' }];
   var ang = 0, last = 0;
@@ -68,10 +74,11 @@
     ctx.fillStyle = '#5c5c70'; ctx.fillText('▶ MERCY: 404', 330, 164);
     ctx.fillStyle = '#b026ff'; ctx.fillText('STATUS: ALL TARGETS LOCKED', 330, 200);
   }
-  requestAnimationFrame(radar);
+  requestAnimationFrame(radar); }
 
   // opcode rain canvas
-  var rc = document.getElementById('raincv'), rx = rc.getContext('2d');
+  var rc = document.getElementById('raincv');
+  if (rc) { var rx = rc.getContext('2d');
   var RW = rc.width, RH = rc.height;
   var glyphs = '01ABCDEF$#ﾊﾐﾋｰｳｼﾅﾓﾆDEADBEEF'.split('');
   var cols = Math.floor(RW / 18), drops = [];
@@ -99,25 +106,26 @@
     }
   }
   rx.fillStyle = '#050508'; rx.fillRect(0, 0, RW, RH);
-  requestAnimationFrame(rain);
+  requestAnimationFrame(rain); }
 
   // final boss HP loop (12s master)
   var fill = document.getElementById('bossfill'), blabel = document.getElementById('bosslabel'), blog = document.getElementById('bosslog');
-  var BOSS_T = 12000, bossT0 = null;
-  function boss(t) {
+  if (fill && blabel && blog) {
+    var BOSS_T = 12000, bossT0 = null;
+    var boss = function (t) {
+      requestAnimationFrame(boss);
+      if (RM) { fill.style.width = '0%'; blabel.textContent = '\u2620 BOSS DEFEATED'; return; }
+      if (!visible(fill)) return;
+      if (bossT0 === null) bossT0 = t;
+      var p = ((t - bossT0) % BOSS_T) / BOSS_T, hp;
+      hp = p < 0.85 ? 100 * (1 - p / 0.85) : 0;
+      fill.style.width = hp.toFixed(1) + '%';
+      fill.style.background = hp > 50 ? '#39ff14' : hp > 25 ? '#ffb000' : '#dc143c';
+      if (hp <= 0) { blabel.textContent = '\u2620 BOSS DEFEATED'; blog.textContent = 'neutralized'; }
+      else { blabel.textContent = 'HP ' + Math.ceil(hp) + '%'; blog.textContent = 'dealing damage'; }
+    };
     requestAnimationFrame(boss);
-    if (RM) { fill.style.width = '0%'; blabel.textContent = '☠ BOSS DEFEATED'; return; }
-    if (!visible(fill)) return;
-    if (bossT0 === null) bossT0 = t;
-    var p = ((t - bossT0) % BOSS_T) / BOSS_T, hp;
-    if (p < 0.85) hp = 100 * (1 - p / 0.85);
-    else hp = 0;
-    fill.style.width = hp.toFixed(1) + '%';
-    fill.style.background = hp > 50 ? '#39ff14' : hp > 25 ? '#ffb000' : '#dc143c';
-    if (hp <= 0) { blabel.textContent = '☠ BOSS DEFEATED — LOOT: RESPECT +∞'; blog.textContent = 'CRITICAL 99999 — senior architect neutralized'; }
-    else { blabel.textContent = 'HP ' + Math.ceil(hp) + '%'; blog.textContent = 'dealing damage… asm · rust · kernel'; }
   }
-  requestAnimationFrame(boss);
 
   // emulated shell: history + tab-complete + easter eggs
   var term = document.getElementById('term'), form = document.getElementById('termform'), input = document.getElementById('terminput');

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>HESAM JAMALI — ring-0 fortress</title>
-<meta name="description" content="HESAM JAMALI — full-metal stack, kernel-level operator. Seniors terminated: 1337. WebGL war-room, live terminal, zero mercy."/>
+<title>HESAM JAMALI — compiler · wasm · raytracer, live in your browser</title>
+<meta name="description" content="A compiler, a hand-emitted WebAssembly module, a raytracer, an N-body integrator and SHA-256 — all written from scratch and running live in your browser. Zero dependencies."/>
 <link rel="canonical" href="https://hesam-oxe.github.io/"/>
 <meta name="theme-color" content="#0a0a10"/>
 <meta property="og:type" content="website"/>
@@ -23,68 +23,140 @@
 </head>
 <body>
 <a class="skip" href="#main">skip to content</a>
-<div class="ticker" aria-hidden="true"><span>⚠ INTRUDER DETECTED — SENIOR DEV ENTERED RING-0 · NEUTRALIZED IN 0.03s · 1337 TERMINATED · MERCY NOT FOUND ·&nbsp;</span><span>⚠ INTRUDER DETECTED — SENIOR DEV ENTERED RING-0 · NEUTRALIZED IN 0.03s · 1337 TERMINATED · MERCY NOT FOUND ·&nbsp;</span></div>
+<div class="ticker" aria-hidden="true"><span>LEXER · PRATT PARSER · TYPE CHECKER · CONSTANT FOLDING · DCE · BYTECODE VM · HAND-EMITTED WASM · RECURSIVE RAYTRACER · VELOCITY-VERLET INTEGRATOR · FIPS 180-4 SHA-256 · THOMPSON NFA · ZERO DEPENDENCIES ·&nbsp;</span><span>LEXER · PRATT PARSER · TYPE CHECKER · CONSTANT FOLDING · DCE · BYTECODE VM · HAND-EMITTED WASM · RECURSIVE RAYTRACER · VELOCITY-VERLET INTEGRATOR · FIPS 180-4 SHA-256 · THOMPSON NFA · ZERO DEPENDENCIES ·&nbsp;</span></div>
 <nav aria-label="sections">
-  <a href="#boot">BOOT</a><a href="#panic">PANIC</a><a href="#shell">SHELL</a><a
-  href="#kills">KILLS</a><a href="#boss">BOSS</a><a href="#radar">RADAR</a><a
-  href="#rain">RAIN</a><a href="#repos">ARSENAL</a><a href="#contact">CONTACT</a>
+  <a href="#compiler">COMPILER</a><a href="#wasm">WASM</a><a href="#raytracer">RAYTRACER</a><a
+  href="#nbody">N-BODY</a><a href="#crypto">SHA-256</a><a href="#regex">REGEX</a><a
+  href="#bench">BENCH</a><a href="#shell">SHELL</a><a href="#repos">REPOS</a><a href="#contact">CONTACT</a>
   <a class="gh" href="https://github.com/hesam-oxe">GitHub ⛓</a>
 </nav>
 <header class="hero">
-  <canvas id="hero3d" aria-label="3D hell core (WebGL, optional)"></canvas>
+  <canvas id="hero3d" aria-label="3D core (WebGL, optional)"></canvas>
   <img class="hero-fallback" src="assets/glitch-name.svg" alt="HESAM JAMALI" fetchpriority="high"/>
-  <p class="sub">FULL-METAL STACK · KERNEL-LEVEL OPERATOR</p>
-  <p class="kill">SENIORS TERMINATED: <span data-count="1337">0</span> · MERCY: NOT FOUND</p>
+  <p class="sub">COMPILERS · SYSTEMS · GRAPHICS · CRYPTO</p>
+  <p class="kill">EVERY CLAIM ON THIS PAGE EXECUTES IN YOUR BROWSER · <span class="g">ZERO DEPENDENCIES</span></p>
   <div class="cta">
-    <a href="#shell">▶ enter terminal</a>
-    <a href="https://github.com/hesam-oxe">⛓ profile</a>
+    <a href="#compiler">▶ run the compiler</a>
+    <a href="#bench">⚡ benchmark your machine</a>
+    <a href="https://github.com/hesam-oxe">⛓ source</a>
   </div>
 </header>
 <main id="main">
-  <section id="boot" class="reveal">
-    <h2>⬢ BOOT SEQUENCE</h2>
-    <img src="assets/boot-sequence.svg" alt="kernel boot — soul mounted, mercy not found" loading="lazy"/>
+  <section id="proof" class="reveal">
+    <h2>⬢ THIS IS NOT A PORTFOLIO. IT IS A PROOF.</h2>
+    <p class="lead">Everything below runs <b>in your browser, right now</b>. No backend. No libraries.
+    No frameworks. A compiler, a WebAssembly module emitted byte-by-byte, a raytracer, an N-body
+    integrator, SHA-256 verified against NIST vectors, and a regex engine immune to catastrophic
+    backtracking — all hand-written. Open DevTools. Read the source. Every claim is falsifiable.</p>
+    <div class="cards">
+      <div><small>DEPENDENCIES</small><b>0</b></div>
+      <div><small>COMPILER STAGES</small><b>6</b></div>
+      <div><small>WASM BYTES</small><b>253</b></div>
+      <div><small>NIST VECTORS</small><b class="g">PASS</b></div>
+    </div>
   </section>
-  <section id="panic" class="reveal">
-    <h2>☠ KERNEL PANIC — REAL DUMP</h2>
-    <img src="assets/kernel-panic.svg" alt="kernel panic — senior dev detected" loading="lazy"/>
+
+  <section id="compiler" class="reveal">
+    <h2>⬢ FORGE — A REAL COMPILER, LIVE</h2>
+    <p class="lead">Lexer → Pratt parser → AST → <b>type checker</b> → constant folding + dead-code
+    elimination → bytecode → stack VM. Statically typed. Rust-style diagnostics with source-mapped
+    carets. Edit the code, hit RUN.</p>
+    <div class="btnrow">
+      <button data-demo="fib" type="button">fib</button>
+      <button data-demo="gcd" type="button">gcd</button>
+      <button data-demo="sieve" type="button">primes</button>
+      <button data-demo="optimize" type="button">optimizer</button>
+      <button data-demo="typeerror" type="button">type error</button>
+    </div>
+    <textarea id="csrc" spellcheck="false" aria-label="source code" rows="12"></textarea>
+    <div class="btnrow">
+      <button id="crun" class="primary" type="button">▶ COMPILE &amp; RUN</button>
+      <button id="casm" type="button">⬡ SHOW BYTECODE</button>
+      <label class="chk"><input id="coptim" type="checkbox" checked/> optimize</label>
+    </div>
+    <p class="stats" id="cstats"></p>
+    <pre class="out" id="cout" aria-live="polite"></pre>
   </section>
+
+  <section id="wasm" class="reveal">
+    <h2>⬢ WEBASSEMBLY — EMITTED BYTE BY BYTE</h2>
+    <p class="lead">No Emscripten. No wasm-pack. No <code>wat2wasm</code>. This module was written as raw
+    LEB128-encoded bytes — section headers, type signatures, opcodes — then validated and instantiated
+    by your browser's own WASM engine.</p>
+    <pre class="out" id="wasmout">loading module…</pre>
+  </section>
+
+  <section id="raytracer" class="reveal">
+    <h2>⬢ RAYTRACER — RECURSIVE, FROM SCRATCH</h2>
+    <p class="lead">Ray-sphere intersection solved analytically. Recursive reflections, Fresnel falloff,
+    hard shadows from three light sources, gamma-corrected output. Zero graphics libraries.</p>
+    <canvas id="rtcv" width="480" height="300" aria-label="raytraced scene rendered live"></canvas>
+    <div class="btnrow">
+      <button id="rtd2" type="button">depth 1</button>
+      <button id="rtd3" class="primary" type="button">depth 3</button>
+      <button id="rtd5" type="button">depth 5</button>
+    </div>
+    <p class="stats" id="rtinfo"></p>
+  </section>
+
+  <section id="nbody" class="reveal">
+    <h2>⬢ N-BODY — SYMPLECTIC INTEGRATION</h2>
+    <p class="lead">200 gravitating bodies, ~19,900 pairwise force computations every frame, integrated
+    with <b>velocity-Verlet</b> — a symplectic scheme that conserves total energy where naive Euler
+    integration explodes. The drift number below is measured live.</p>
+    <canvas id="nbcv" width="680" height="340" aria-label="n-body gravitational simulation"></canvas>
+    <p class="stats" id="nbinfo"></p>
+  </section>
+
+  <section id="crypto" class="reveal">
+    <h2>⬢ SHA-256 — FIPS 180-4, HAND-IMPLEMENTED</h2>
+    <p class="lead">Full message schedule, all 64 rounds, correct padding and big-endian length encoding.
+    Verified against the official NIST test vectors below — and against <code>node:crypto</code> on 200
+    random inputs during build.</p>
+    <input id="shain" class="wide" spellcheck="false" aria-label="text to hash"/>
+    <pre class="out" id="shaout"></pre>
+    <pre class="out small" id="shavec"></pre>
+    <div class="btnrow"><button id="shabench" type="button">⚡ hash 200 KB</button></div>
+    <p class="stats" id="shabenchout"></p>
+  </section>
+
+  <section id="regex" class="reveal">
+    <h2>⬢ REGEX ENGINE — THOMPSON NFA</h2>
+    <p class="lead">Recursive-descent pattern parser → NFA construction → subset simulation with
+    epsilon-closure. Linear time, <b>O(n·m)</b>, always. No backtracking, so no ReDoS — ever.</p>
+    <div class="inputrow">
+      <input id="rep" class="wide" value="(a|b)*c[0-9]" spellcheck="false" aria-label="regex pattern"/>
+      <input id="res" class="wide" value="ababc7" spellcheck="false" aria-label="test string"/>
+    </div>
+    <p class="stats" id="reout"></p>
+    <div class="btnrow"><button id="reevil" type="button">☠ fire the ReDoS bomb</button></div>
+    <p class="stats" id="reevilout"></p>
+  </section>
+
+  <section id="sortlab" class="reveal">
+    <h2>⬢ SORTING LAB — INSTRUMENTED</h2>
+    <p class="lead">Median-of-three quicksort with tail-call elimination, top-down mergesort, and an
+    LSD radix sort — benchmarked against V8's native TimSort on identical data, with correctness
+    verified after every run.</p>
+    <div class="btnrow">
+      <input id="sortn" type="number" value="4000" min="100" max="200000" step="100" aria-label="element count"/>
+      <button id="sortrun" class="primary" type="button">▶ RACE THEM</button>
+    </div>
+    <pre class="out" id="sortout">press RACE THEM</pre>
+  </section>
+
+  <section id="bench" class="reveal">
+    <h2>⬢ BENCHMARK YOUR MACHINE</h2>
+    <p class="lead">Five real workloads, executed on your device by the code on this page. Nothing is
+    pre-recorded.</p>
+    <div class="btnrow"><button id="benchrun" class="primary" type="button">▶ RUN FULL SUITE</button></div>
+    <pre class="out" id="benchout">press RUN FULL SUITE</pre>
+  </section>
+
   <section id="shell" class="reveal">
     <h2>⬢ LIVE SHELL — type <code>help</code> · <code>Tab</code> completes · <code>↑↓</code> history</h2>
     <div class="term" id="term" role="log" aria-label="emulated ring-0 shell" aria-live="polite"></div>
     <form id="termform"><span aria-hidden="true">root@hellfire:~#</span><input id="terminput" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="shell input" maxlength="120"/></form>
-  </section>
-  <section id="kills" class="reveal">
-    <h2>⬢ KILL BOARD</h2>
-    <div class="cards">
-      <div><small>SENIOR DEVS</small><b data-count="1337">0</b></div>
-      <div><small>ARCHITECTS</small><b data-count="666">0</b></div>
-      <div><small>BUGS EXTERMINATED</small><b data-count="9999">0</b></div>
-      <div><small>JUNIORS SPARED</small><b>0</b></div>
-    </div>
-    <img src="assets/kill-board.svg" alt="kill board" loading="lazy"/>
-  </section>
-  <section id="boss" class="reveal">
-    <h2>⚔ FINAL BOSS — SENIOR ARCHITECT LVL 99</h2>
-    <div class="bossbar" role="img" aria-label="boss health draining to zero">
-      <div class="bossfill" id="bossfill"></div>
-      <span class="bosslabel" id="bosslabel">HP 100%</span>
-    </div>
-    <p class="mono" id="bosslog">weapon: kernel · asm · rust — respawn: never</p>
-    <img src="assets/final-boss.svg" alt="final boss artwork" loading="lazy"/>
-  </section>
-  <section id="radar" class="reveal">
-    <h2>⬢ WAR-ROOM RADAR</h2>
-    <canvas id="radarcv" width="680" height="300" aria-label="radar sweep — 3 hostile seniors locked"></canvas>
-    <p class="mono">SCAN: entire stack · CONTACTS: <b class="red">3 HOSTILE SENIORS</b> · ETA: 0.03s · MERCY: 404</p>
-  </section>
-  <section id="rain" class="reveal">
-    <h2>⬢ OPCODE RAIN — x86_64 · LIVE CANVAS</h2>
-    <canvas id="raincv" width="680" height="240" aria-label="opcode rain — 0xDEAD 0xBEEF SEGFAULT"></canvas>
-  </section>
-  <section id="skyline" class="reveal">
-    <h2>⬢ SECTOR 7 — CONQUERED SKYLINE</h2>
-    <img src="assets/skyline-hell.svg" alt="conquered skyline — smoke still rising" loading="lazy"/>
   </section>
   <section id="repos" class="reveal">
     <h2>⬢ LIVE ARSENAL — fresh from GitHub API</h2>
@@ -100,7 +172,7 @@
   </section>
   <section id="contact" class="reveal">
     <h2>⬢ ESTABLISH CONTACT</h2>
-    <p class="quote">“I don't write code. I forge weapons.”</p>
+    <p class="quote">“Anyone can list technologies. I ship the implementations — and let you run them.”</p>
     <p>
       <a href="https://github.com/hesam-oxe">⛓ GitHub</a> ·
       <a href="https://www.linkedin.com/in/hesam-jamali-218b93414/">🔗 LinkedIn</a> ·
@@ -114,7 +186,10 @@
   <p>⚠️ YOU HAVE REACHED THE END. THE FIRE HASN'T. · <a href="https://github.com/hesam-oxe">hesam-oxe</a></p>
 </footer>
 <button id="totop" type="button" aria-label="back to top">▲</button>
+<script src="engine/compiler.js" defer></script>
+<script src="engine/forge.js" defer></script>
 <script src="app.js" defer></script>
+<script src="engine/warroom.js" defer></script>
 <script type="module">
 try {
   const THREE = await import('three');
