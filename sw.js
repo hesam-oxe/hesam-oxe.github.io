@@ -1,8 +1,9 @@
 // Offline fortress: cache-first same-origin GET, v2.
-var CACHE = 'forge-v4';
+var CACHE = 'forge-v5';
 var CORE = ['.', 'index.html', 'styles.css', 'app.js', 'favicon.svg', 'manifest.webmanifest',
   'engine/compiler.js', 'engine/forge.js', 'engine/warroom.js', 'engine/core3d.js',
-  'engine/core.wasm.b64',
+  'engine/deflate.js', 'engine/nn.js', 'engine/lab.js', 'engine/ci.js', 'engine/hud.js',
+  'engine/core.wasm.b64', '404.html', 'robots.txt',
   'assets/hero-forge.svg', 'assets/glitch-name.svg', 'assets/hellfire.svg',
   'assets/kill-board.svg', 'assets/war-room.svg'];
 self.addEventListener('install', function (e) {

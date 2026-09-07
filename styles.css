@@ -155,3 +155,131 @@ section h2::after{content:"";position:absolute;left:0;bottom:-8px;height:2px;wid
 @media (prefers-reduced-motion: reduce){
   section h2::after{animation:none;width:min(420px,60%)}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GOD MODE — command palette · CI board · neural lab · progress · print
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ---- scroll progress -------------------------------------------------- */
+.progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;pointer-events:none;
+  background:#ffffff08}
+.progress i{display:block;height:100%;width:0;
+  background:linear-gradient(90deg,#dc143c,#ff6b35,#ffb000,#39ff14,#00e5ff);
+  box-shadow:0 0 10px #dc143c88}
+
+/* ---- nav active state + palette button -------------------------------- */
+nav a{position:relative;padding-bottom:2px;transition:color .15s}
+nav a.active{color:#fff}
+nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;
+  background:var(--red);box-shadow:0 0 8px var(--red)}
+.palbtn{margin-left:auto;background:#12121c;border:1px solid #3a3a55;color:var(--dim);
+  border-radius:6px;padding:3px 9px;font:inherit;font-size:11px;letter-spacing:1px;cursor:pointer}
+.palbtn:hover{border-color:var(--cyan);color:var(--cyan)}
+nav .gh{margin-left:14px}
+kbd{background:#181826;border:1px solid #33334d;border-bottom-width:2px;border-radius:4px;
+  padding:1px 5px;font:inherit;font-size:11px;color:#c9c9dd}
+.hint{color:#6a6a80;font-size:12px;margin-top:14px;letter-spacing:.4px}
+.hint kbd{margin:0 1px}
+
+/* ---- command palette --------------------------------------------------- */
+.palette{position:fixed;inset:0;z-index:80;display:none;background:#04040acc;
+  backdrop-filter:blur(3px);padding:12vh 16px 16px}
+.palette.on{display:block;animation:palin .13s ease-out}
+@keyframes palin{from{opacity:0}to{opacity:1}}
+.pal-box{max-width:600px;margin:0 auto;background:#0c0f16;border:1px solid #26314a;
+  border-radius:14px;overflow:hidden;box-shadow:0 30px 90px #000c,0 0 0 1px #ffffff08}
+#palin{width:100%;background:transparent;border:0;border-bottom:1px solid #1c2434;
+  color:var(--txt);font:inherit;font-size:15px;padding:16px 18px;outline:none}
+#palin::placeholder{color:#4d5568}
+#pallist{list-style:none;margin:0;padding:6px;max-height:46vh;overflow-y:auto}
+#pallist li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:9px 12px;border-radius:8px;cursor:pointer;font-size:13.5px}
+#pallist li.sel{box-shadow:inset 0 0 0 1px #2f4a78}
+#pallist li:hover{background:#131c2e}
+.pal-label{color:#e6edf3}
+.pal-hint{color:#5b6577;font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pal-empty{color:#5b6577;justify-content:center!important;cursor:default!important}
+.pal-foot{display:flex;gap:18px;padding:9px 18px;border-top:1px solid #1c2434;
+  color:#4d5568;font-size:11px}
+.pal-foot kbd{margin-right:3px}
+
+/* ---- CI board ---------------------------------------------------------- */
+.badge{display:inline-block;font:700 10px/1 ui-monospace,monospace;letter-spacing:1.6px;
+  padding:8px 12px;border-radius:5px;color:#6a6a80;background:#12121c;
+  box-shadow:inset 0 0 0 1px #2a2a40}
+.badge.ok{color:#4ade80;background:#4ade8014;box-shadow:inset 0 0 0 1px #4ade8055;
+  text-shadow:0 0 12px #4ade8066}
+.badge.bad{color:#ff5370;background:#ff537014;box-shadow:inset 0 0 0 1px #ff537055}
+.pill.bad{color:#ff5370;background:#ff537018;box-shadow:inset 0 0 0 1px #ff537044}
+.pill.run{color:#6a6a80;background:#ffffff08;box-shadow:inset 0 0 0 1px #2a2a40}
+table.ev.ci{min-width:820px}
+table.ev.ci td:nth-child(3){color:#c3ccd8}
+td.ci-detail{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;
+  line-height:1.5;max-width:340px;white-space:pre-wrap;word-break:break-word}
+td.ci-ms{font-family:ui-monospace,monospace;font-size:11px;color:#5b6577;
+  text-align:right;white-space:nowrap}
+#cisum{font-size:13px}
+#cirun[disabled]{opacity:.55;cursor:progress}
+
+/* ---- neural lab -------------------------------------------------------- */
+.nnwrap{display:grid;grid-template-columns:380px 1fr;gap:16px;align-items:start;margin:14px 0}
+#nncv{width:100%;max-width:380px;aspect-ratio:1;background:#050508;border:1px solid #22223a;
+  border-radius:12px;display:block}
+#nnloss{width:100%;background:#050508;border:1px solid #22223a;border-radius:10px;display:block}
+.nnside{display:grid;gap:10px}
+.nnside .chk{justify-content:space-between;width:100%}
+#nnarch,#nnlr{background:#0d0d15;border:1px solid #22223a;color:var(--txt);border-radius:6px;
+  padding:6px 8px;font:inherit;font-size:12px}
+#nngc{font-size:12.5px}
+@media(max-width:760px){.nnwrap{grid-template-columns:1fr}#nncv{max-width:100%}}
+
+/* ---- gzip lab ---------------------------------------------------------- */
+#gzout{min-height:170px}
+#gzdl[disabled]{opacity:.4;cursor:not-allowed}
+#gzip .inputrow{grid-template-columns:1fr auto}
+@media(max-width:560px){#gzip .inputrow{grid-template-columns:1fr}}
+
+/* ---- calm mode (palette toggle) ---------------------------------------- */
+html.calm *{animation:none!important;transition:none!important}
+html.calm .reveal{opacity:1!important;transform:none!important}
+
+/* ---- print: turns the page into a readable one-pager ------------------- */
+@media print{
+  .ticker,nav,.palette,.progress,#totop,.cta,.hint,#hero3d,.btnrow,
+  #shell,#feeds,footer img,section img.panel{display:none!important}
+  body{background:#fff;color:#111}
+  main{max-width:none}
+  h2{color:#000;font-size:13px}
+  h2::after{display:none}
+  .lead,p,td,th{color:#222!important}
+  a{color:#0645ad!important;text-decoration:underline}
+  a.pr::after{content:" (" attr(href) ")";font-size:9px;color:#555}
+  .tblwrap{border-color:#bbb;background:#fff;box-shadow:none;overflow:visible}
+  table.ev{min-width:0;font-size:10px}
+  table.ev thead th{background:#eee;color:#333}
+  table.ev tbody tr:nth-child(2n){background:#f7f7f7}
+  .pill{box-shadow:none;border:1px solid #999;color:#111!important;background:#fff!important}
+  .cards div{border-color:#999}.cards b{color:#000}
+  details.rejected{border-color:#bbb;background:#fff}
+  details.rejected[open] summary{color:#000}
+  pre.out{border-color:#ccc;background:#fafafa;color:#222}
+  section{page-break-inside:avoid;margin:14px 0}
+}
+
+/* ---- reduced motion ----------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  .progress i{transition:none}
+  .palette.on{animation:none}
+}
+
+/* ---- wide tables break out of the 800px column on big screens ---------- */
+@media(min-width:1024px){
+  .tblwrap{width:min(1160px, calc(100vw - 48px));
+    position:relative;left:50%;transform:translateX(-50%)}
+  table.ev.ci td.ci-detail{max-width:420px}
+}
+.inputrow{align-items:stretch}
+.inputrow input.wide{margin-bottom:0}
+.inputrow button{background:#12121c;border:1px solid #3a3a55;color:var(--txt);border-radius:7px;
+  padding:9px 14px;font:inherit;font-size:12.5px;cursor:pointer;letter-spacing:1px;white-space:nowrap}
+.inputrow button:hover{border-color:var(--cyan);color:var(--cyan)}

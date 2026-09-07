@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://hesam-oxe.github.io/sitemap.xml

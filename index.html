@@ -3,29 +3,40 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>HESAM JAMALI — compiler · wasm · raytracer, live in your browser</title>
-<meta name="description" content="A compiler, a hand-emitted WebAssembly module, a raytracer, an N-body integrator and SHA-256 — all written from scratch and running live in your browser. Zero dependencies."/>
+<title>HESAM JAMALI — compiler · wasm · gzip · neural net, live in your browser</title>
+<meta name="description" content="A compiler, a hand-emitted WebAssembly module, a gzip compressor your own browser verifies, a neural network with hand-derived backprop, a raytracer and SHA-256 — written from scratch, running live in your browser, with a 42-assertion test suite that proves it. Zero dependencies."/>
 <link rel="canonical" href="https://hesam-oxe.github.io/"/>
 <meta name="theme-color" content="#0a0a10"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Hesam Jamali — a compiler, a hand-written WASM module, and SHA-256, live in your browser"/>
-<meta property="og:description" content="A six-stage compiler, a 253-byte WebAssembly module emitted byte by byte, a recursive raytracer and FIPS 180-4 SHA-256 — all hand-written, zero dependencies, all executing on your machine right now."/>
+<meta property="og:description" content="A six-stage compiler, a 253-byte WebAssembly module emitted byte by byte, an RFC 1951 gzip compressor validated by your browser's own decoder, backpropagation checked against finite differences, and FIPS 180-4 SHA-256 — hand-written, zero dependencies, executing on your machine right now."/>
 <meta property="og:url" content="https://hesam-oxe.github.io/"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta property="og:image" content="https://hesam-oxe.github.io/assets/glitch-name.svg"/>
 <meta name="twitter:title" content="Hesam Jamali — compilers, systems, cryptography"/>
-<meta name="twitter:description" content="Compiler, hand-emitted WASM, raytracer, SHA-256 — running live in your browser. Every claim is falsifiable."/>
+<meta name="twitter:description" content="Compiler, hand-emitted WASM, gzip, backprop, raytracer, SHA-256 — live in your browser, with a test suite that runs in front of you. Every claim is falsifiable."/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="stylesheet" href="styles.css"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Hesam Jamali","alternateName":"hesam-oxe",
+"url":"https://hesam-oxe.github.io/","email":"mailto:chngyzkhanwhsht@gmail.com",
+"jobTitle":"Systems & Compiler Engineer",
+"description":"Writes compilers, WebAssembly, renderers, cryptography and compression from scratch. Contributor to OWASP, LLVM, Apache SeaTunnel, Apache Gravitino, Sphinx and Telegram Desktop.",
+"knowsAbout":["Compilers","WebAssembly","Computer graphics","Cryptography","Data compression","Rust","C","TypeScript","Python"],
+"sameAs":["https://github.com/hesam-oxe","https://www.linkedin.com/in/hesam-jamali-218b93414/"]}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">skip to content</a>
-<div class="ticker" aria-hidden="true"><span>LEXER · PRATT PARSER · TYPE CHECKER · CONSTANT FOLDING · DCE · BYTECODE VM · HAND-EMITTED WASM · RECURSIVE RAYTRACER · VELOCITY-VERLET INTEGRATOR · FIPS 180-4 SHA-256 · THOMPSON NFA · ZERO DEPENDENCIES ·&nbsp;</span><span>LEXER · PRATT PARSER · TYPE CHECKER · CONSTANT FOLDING · DCE · BYTECODE VM · HAND-EMITTED WASM · RECURSIVE RAYTRACER · VELOCITY-VERLET INTEGRATOR · FIPS 180-4 SHA-256 · THOMPSON NFA · ZERO DEPENDENCIES ·&nbsp;</span></div>
+<div class="ticker" aria-hidden="true"><span>LEXER · PRATT PARSER · TYPE CHECKER · CONSTANT FOLDING · DCE · BYTECODE VM · HAND-EMITTED WASM · RECURSIVE RAYTRACER · VELOCITY-VERLET INTEGRATOR · FIPS 180-4 SHA-256 · THOMPSON NFA · LZ77 · CANONICAL HUFFMAN · CRC-32 · BACKPROPAGATION · 42 LIVE ASSERTIONS · ZERO DEPENDENCIES ·&nbsp;</span><span>LEXER · PRATT PARSER · TYPE CHECKER · CONSTANT FOLDING · DCE · BYTECODE VM · HAND-EMITTED WASM · RECURSIVE RAYTRACER · VELOCITY-VERLET INTEGRATOR · FIPS 180-4 SHA-256 · THOMPSON NFA · LZ77 · CANONICAL HUFFMAN · CRC-32 · BACKPROPAGATION · 42 LIVE ASSERTIONS · ZERO DEPENDENCIES ·&nbsp;</span></div>
 <nav aria-label="sections">
   <a href="#compiler">COMPILER</a><a href="#wasm">WASM</a><a href="#raytracer">RAYTRACER</a><a
   href="#nbody">N-BODY</a><a href="#crypto">SHA-256</a><a href="#regex">REGEX</a><a
-  href="#bench">BENCH</a><a href="#shell">SHELL</a><a href="#upstream">UPSTREAM</a><a href="#repos">REPOS</a><a href="#contact">CONTACT</a>
+  href="#sortlab">SORT</a><a href="#gzip">GZIP</a><a href="#nn">NEURAL NET</a><a
+  href="#ci">CI</a><a href="#bench">BENCH</a><a href="#shell">SHELL</a><a
+  href="#upstream">UPSTREAM</a><a href="#repos">REPOS</a><a href="#contact">CONTACT</a>
+  <button class="palbtn" data-palette type="button" aria-label="open command palette">⌘K</button>
   <a class="gh" href="https://github.com/hesam-oxe">GitHub ⛓</a>
 </nav>
 <header class="hero">
@@ -36,21 +47,28 @@
   <div class="cta">
     <a href="#compiler">▶ run the compiler</a>
     <a href="#bench">⚡ benchmark your machine</a>
+    <a href="#ci">✓ run the test suite</a>
     <a href="https://github.com/hesam-oxe">⛓ source</a>
   </div>
+  <p class="hint">press <kbd>⌘</kbd><kbd>K</kbd> <span class="d">/</span> <kbd>Ctrl</kbd><kbd>K</kbd> <span class="d">to jump anywhere or run anything</span></p>
 </header>
 <main id="main">
   <section id="proof" class="reveal">
     <h2>⬢ THIS IS NOT A PORTFOLIO. IT IS A PROOF.</h2>
     <p class="lead">Everything below runs <b>in your browser, right now</b>. No backend. No libraries.
-    No frameworks. A compiler, a WebAssembly module emitted byte-by-byte, a raytracer, an N-body
-    integrator, SHA-256 verified against NIST vectors, and a regex engine immune to catastrophic
-    backtracking — all hand-written. Open DevTools. Read the source. Every claim is falsifiable.</p>
+    No frameworks. A compiler, a WebAssembly module emitted byte-by-byte, a gzip compressor your own
+    browser validates, a neural network whose gradients are checked against finite differences, a
+    raytracer, an N-body integrator, SHA-256 against NIST vectors, and a regex engine immune to
+    catastrophic backtracking — all hand-written.</p>
+    <p class="lead">And you don't have to take any of it on faith: <a href="#ci">this page runs its
+    own test suite</a> on your hardware and shows you every result. Open DevTools. Read the source.
+    <b>Every claim here is falsifiable, and set up so you can falsify it.</b></p>
     <div class="cards">
       <div><small>DEPENDENCIES</small><b>0</b></div>
       <div><small>COMPILER STAGES</small><b>6</b></div>
       <div><small>WASM BYTES</small><b>253</b></div>
       <div><small>NIST VECTORS</small><b class="g">PASS</b></div>
+      <div><small>LIVE ASSERTIONS</small><b id="cicount2">40</b></div>
     </div>
   </section>
 
@@ -156,6 +174,90 @@
     <div class="term" id="term" role="log" aria-label="emulated ring-0 shell" aria-live="polite"></div>
     <form id="termform"><span aria-hidden="true">root@hellfire:~#</span><input id="terminput" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="shell input" maxlength="120"/></form>
   </section>
+
+  <section id="gzip" class="reveal">
+    <h2>⬢ DEFLATE — A GZIP COMPRESSOR, AND AN INDEPENDENT REFEREE</h2>
+    <p class="lead">RFC&nbsp;1951 and RFC&nbsp;1952 implemented from the spec: an <b>LZ77</b> sliding
+    window with hash-chain match search, <b>canonical Huffman</b> coding length-limited to 15 bits,
+    dynamic / fixed / stored block selection by actual bit cost, run-length-coded code-length
+    alphabets, and <b>CRC-32</b>. No pako, no fflate, no zlib.</p>
+    <p class="lead">Anyone can claim their compressor works. So the output is handed to
+    <code>DecompressionStream('gzip')</code> — <b>your browser vendor's</b> decoder, not mine. One
+    wrong bit anywhere in the Huffman stream and it throws. Download the result and run
+    <code>gunzip</code> on it if the page still isn't convincing.</p>
+    <div class="btnrow">
+      <button id="gzpage" class="primary" type="button">▶ COMPRESS THIS PAGE</button>
+      <button id="gzengine" type="button">⬡ compress the engines</button>
+      <button id="gzrandom" type="button">☠ 64 KB of noise</button>
+      <button id="gzdl" type="button" disabled>⬇ download .gz</button>
+    </div>
+    <div class="inputrow">
+      <input id="gzin" class="wide" spellcheck="false" value="the quick brown fox jumps over the lazy dog. " aria-label="text to compress"/>
+      <button id="gztext" type="button">compress that text</button>
+    </div>
+    <pre class="out" id="gzout" aria-live="polite">press COMPRESS THIS PAGE — or drop any file here (&lt; 8 MB)</pre>
+    <p class="stats" id="gzstat"></p>
+  </section>
+
+  <section id="nn" class="reveal">
+    <h2>⬢ NEURAL NETWORK — BACKPROP DERIVED BY HAND</h2>
+    <p class="lead">A multilayer perceptron training live on the <b>two-spiral</b> problem — the
+    benchmark no linear model can ever solve. Xavier initialisation, tanh hidden units, sigmoid
+    output, binary cross-entropy, mini-batch SGD with momentum. Every partial derivative in the
+    chain rule is written out explicitly. No TensorFlow, no ONNX, no WASM blob.</p>
+    <div class="btnrow">
+      <button data-ds="spirals" class="primary" type="button">two spirals</button>
+      <button data-ds="circles" type="button">circles</button>
+      <button data-ds="xor" type="button">xor quadrants</button>
+    </div>
+    <div class="nnwrap">
+      <canvas id="nncv" width="380" height="380" aria-label="decision boundary learned live"></canvas>
+      <div class="nnside">
+        <canvas id="nnloss" width="330" height="120" aria-label="training loss curve"></canvas>
+        <div class="btnrow">
+          <button id="nnrun" class="primary" type="button">▶ TRAIN</button>
+          <button id="nnreset" type="button">↺ reset</button>
+        </div>
+        <label class="chk">architecture
+          <select id="nnarch">
+            <option value="32-32" selected>2 – 32 – 32 – 1</option>
+            <option value="8">2 – 8 – 1 (too small)</option>
+            <option value="16-16">2 – 16 – 16 – 1</option>
+            <option value="48-48">2 – 48 – 48 – 1</option>
+            <option value="24-24-24">2 – 24 – 24 – 24 – 1</option>
+          </select>
+        </label>
+        <label class="chk">learning rate
+          <input id="nnlr" type="number" value="0.02" step="0.005" min="0.001" max="0.2"/>
+        </label>
+      </div>
+    </div>
+    <p class="stats" id="nnstat"></p>
+    <p class="lead">The claim that matters is not the animation — it is that the gradients are
+    right. This compares every analytic gradient against a central finite-difference estimate of
+    the same derivative:</p>
+    <div class="btnrow"><button id="nngcrun" type="button">∂ VERIFY THE GRADIENTS</button></div>
+    <p class="stats" id="nngc"></p>
+  </section>
+
+  <section id="ci" class="reveal">
+    <h2>⬢ CONTINUOUS INTEGRATION — RUNNING IN YOUR BROWSER</h2>
+    <p class="lead">Every other portfolio asks you to take its word. This page runs its own test
+    suite in front of you, on your hardware, right now. <b><span id="cicount">40</span> assertions</b>
+    against values fixed before the code existed: NIST vectors, known Fibonacci numbers, your
+    browser's own gzip decoder, finite-difference gradients, conservation of energy.</p>
+    <p class="lead"><b>If any row below turns red, a claim on this page is false.</b> That is the
+    whole design. Nothing here is a screenshot.</p>
+    <div class="btnrow">
+      <button id="cirun" class="primary" type="button">▶ RUN THE SUITE</button>
+      <span class="badge" id="cibadge">NOT YET RUN</span>
+    </div>
+    <p class="stats" id="cisum"></p>
+    <div class="tblwrap"><table class="ev ci">
+      <thead><tr><th>Result</th><th>Engine</th><th>Assertion</th><th>Observed</th><th>Time</th></tr></thead>
+      <tbody id="cibody"></tbody>
+    </table></div>
+  </section>
   <section id="upstream" class="reveal">
     <h2>⬢ UPSTREAM — WHAT ACTUALLY LANDED</h2>
     <p class="lead">The engines above prove I can build. This proves other maintainers merged it.
@@ -224,6 +326,11 @@
 <script src="engine/forge.js" defer></script>
 <script src="app.js" defer></script>
 <script src="engine/warroom.js" defer></script>
+<script src="engine/deflate.js" defer></script>
+<script src="engine/nn.js" defer></script>
 <script src="engine/core3d.js" defer></script>
+<script src="engine/lab.js" defer></script>
+<script src="engine/ci.js" defer></script>
+<script src="engine/hud.js" defer></script>
 </body>
 </html>
