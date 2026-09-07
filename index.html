@@ -8,18 +8,16 @@
 <link rel="canonical" href="https://hesam-oxe.github.io/"/>
 <meta name="theme-color" content="#0a0a10"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="HESAM JAMALI — ring-0 fortress"/>
-<meta property="og:description" content="Full-metal stack · kernel-level operator · seniors terminated: 1337"/>
+<meta property="og:title" content="Hesam Jamali — a compiler, a hand-written WASM module, and SHA-256, live in your browser"/>
+<meta property="og:description" content="A six-stage compiler, a 253-byte WebAssembly module emitted byte by byte, a recursive raytracer and FIPS 180-4 SHA-256 — all hand-written, zero dependencies, all executing on your machine right now."/>
 <meta property="og:url" content="https://hesam-oxe.github.io/"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HESAM JAMALI — ring-0 fortress"/>
-<meta name="twitter:description" content="Full-metal stack · kernel-level operator · seniors terminated: 1337"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://hesam-oxe.github.io/assets/glitch-name.svg"/>
+<meta name="twitter:title" content="Hesam Jamali — compilers, systems, cryptography"/>
+<meta name="twitter:description" content="Compiler, hand-emitted WASM, raytracer, SHA-256 — running live in your browser. Every claim is falsifiable."/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="stylesheet" href="styles.css"/>
-<script type="importmap">
-{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
-</script>
 </head>
 <body>
 <a class="skip" href="#main">skip to content</a>
@@ -27,7 +25,7 @@
 <nav aria-label="sections">
   <a href="#compiler">COMPILER</a><a href="#wasm">WASM</a><a href="#raytracer">RAYTRACER</a><a
   href="#nbody">N-BODY</a><a href="#crypto">SHA-256</a><a href="#regex">REGEX</a><a
-  href="#bench">BENCH</a><a href="#shell">SHELL</a><a href="#repos">REPOS</a><a href="#contact">CONTACT</a>
+  href="#bench">BENCH</a><a href="#shell">SHELL</a><a href="#upstream">UPSTREAM</a><a href="#repos">REPOS</a><a href="#contact">CONTACT</a>
   <a class="gh" href="https://github.com/hesam-oxe">GitHub ⛓</a>
 </nav>
 <header class="hero">
@@ -158,6 +156,42 @@
     <div class="term" id="term" role="log" aria-label="emulated ring-0 shell" aria-live="polite"></div>
     <form id="termform"><span aria-hidden="true">root@hellfire:~#</span><input id="terminput" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="shell input" maxlength="120"/></form>
   </section>
+  <section id="upstream" class="reveal">
+    <h2>⬢ UPSTREAM — WHAT ACTUALLY LANDED</h2>
+    <p class="lead">The engines above prove I can build. This proves other maintainers merged it.
+    Status is the real GitHub state — nothing upgraded for effect. Every row links to the diff.</p>
+    <div class="cards">
+      <div><small>MERGED UPSTREAM</small><b>13</b></div>
+      <div><small>PULL REQUESTS</small><b>48</b></div>
+      <div><small>ORGANIZATIONS</small><b>25</b></div>
+      <div><small>OWASP MERGES</small><b class="g">7</b></div>
+    </div>
+    <img class="panel" src="assets/kill-board.svg" alt="merge board — patches landed upstream" loading="lazy"/>
+    <h3>Merged</h3>
+    <div class="tblwrap"><table class="ev">
+      <thead><tr><th>State</th><th>Org</th><th>Repository</th><th>Contribution</th><th>PR</th></tr></thead>
+      <tbody><tr><td><span class="pill ok">MERGED</span></td><td class="org">OWASP</td><td class="repo">Agent Memory Guard</td><td>GitHub Action — agent-memory vulnerability scanner</td><td><a class="pr" href="https://github.com/OWASP/www-project-agent-memory-guard/pull/18">#18</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">OWASP</td><td class="repo">Agent Memory Guard</td><td>LlamaIndex integration adapter</td><td><a class="pr" href="https://github.com/OWASP/www-project-agent-memory-guard/pull/19">#19</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">OWASP</td><td class="repo">Agent Memory Guard</td><td>CrewAI integration adapter</td><td><a class="pr" href="https://github.com/OWASP/www-project-agent-memory-guard/pull/20">#20</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">OWASP</td><td class="repo">Agent Memory Guard</td><td>Prometheus metrics exporter</td><td><a class="pr" href="https://github.com/OWASP/www-project-agent-memory-guard/pull/21">#21</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">OWASP</td><td class="repo">Agent Memory Guard</td><td>Policy.tiered() preset + memory-class taxonomy</td><td><a class="pr" href="https://github.com/OWASP/www-project-agent-memory-guard/pull/23">#23</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">OWASP</td><td class="repo">Agent Memory Guard</td><td>source_type provenance flag on SecurityEvent</td><td><a class="pr" href="https://github.com/OWASP/www-project-agent-memory-guard/pull/24">#24</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">OWASP</td><td class="repo">Agent Memory Guard</td><td>Multi-turn delayed-attack benchmark category</td><td><a class="pr" href="https://github.com/OWASP/www-project-agent-memory-guard/pull/42">#42</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">nexu-io</td><td class="repo">open-design</td><td>legacy ~/.fnm path in toolchain resolution</td><td><a class="pr" href="https://github.com/nexu-io/open-design/pull/1110">#1110</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">Authora</td><td class="repo">auth</td><td>OTP login hardening, legacy-code removal</td><td><a class="pr" href="https://github.com/Authorair/Authora/pull/3">#3</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">HiveSofts</td><td class="repo">hive-app</td><td>backend refactor</td><td><a class="pr" href="https://github.com/HiveSofts/hive-app/pull/37">#37</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">TaniCSS</td><td class="repo">Tani</td><td>v2.0 framework upgrade + full documentation</td><td><a class="pr" href="https://github.com/TaniCSS/Tani/pull/1">#1</a></td></tr><tr><td><span class="pill ok">MERGED</span></td><td class="org">MY-Jafari</td><td class="repo">flappy-2048</td><td>9 bug fixes — save persistence, hitbox correctness</td><td><a class="pr" href="https://github.com/MY-Jafari/flappy-2048/pull/1">#1</a></td></tr></tbody>
+    </table></div>
+    <h3>Under review upstream</h3>
+    <p class="lead small">Open PRs against projects where review cycles run in months. Listed because
+    the diffs are public, not because they landed.</p>
+    <div class="tblwrap"><table class="ev">
+      <thead><tr><th>State</th><th>Project</th><th>Repository</th><th>Contribution</th><th>PR</th></tr></thead>
+      <tbody><tr><td><span class="pill open">OPEN</span></td><td class="org">LLVM</td><td class="repo">llvm/llvm-project</td><td>[X86] Prevent NUW flag forwarding in ADD→SUB peephole</td><td><a class="pr" href="https://github.com/llvm/llvm-project/pull/201612">#201612</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">LLVM</td><td class="repo">llvm/llvm-project</td><td>[CodeGenPrepare] Crash with asm goto / indirect branch</td><td><a class="pr" href="https://github.com/llvm/llvm-project/pull/201443">#201443</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Go</td><td class="repo">golang/go</td><td>cmd/compile: size cache in StdSizes — kills exponential compile time</td><td><a class="pr" href="https://github.com/golang/go/issues/79314">#79314</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Apache SeaTunnel</td><td class="repo">apache/seatunnel</td><td>Reuse shared SinkWriter in multi-table sink</td><td><a class="pr" href="https://github.com/apache/seatunnel/pull/11077">#11077</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Apache Gravitino</td><td class="repo">apache/gravitino</td><td>View / ViewCatalog interfaces for the Python catalog</td><td><a class="pr" href="https://github.com/apache/gravitino/pull/11019">#11019</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Meta · tritonparse</td><td class="repo">meta-pytorch/tritonparse</td><td>Customizable labels in file-diff view</td><td><a class="pr" href="https://github.com/meta-pytorch/tritonparse/pull/407">#407</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Sphinx</td><td class="repo">sphinx-doc/sphinx</td><td>source_language config + lang attribute</td><td><a class="pr" href="https://github.com/sphinx-doc/sphinx/pull/14429">#14429</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Canonical</td><td class="repo">canonical/documentation-style-guide</td><td>Migrate documentation wordlist to Vale accept.txt</td><td><a class="pr" href="https://github.com/canonical/documentation-style-guide/pull/197">#197</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">ASWF · rawtoaces</td><td class="repo">AcademySoftwareFoundation/rawtoaces</td><td>Prefer std::filesystem error_code over exceptions</td><td><a class="pr" href="https://github.com/AcademySoftwareFoundation/rawtoaces/pull/295">#295</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Lightning AI · LitServe</td><td class="repo">Lightning-AI/LitServe</td><td>Wait for worker setup in wrap_litserve_start</td><td><a class="pr" href="https://github.com/Lightning-AI/LitServe/pull/682">#682</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">bilibili · web-demuxer</td><td class="repo">bilibili/web-demuxer</td><td>Worker option for inline / main-thread runtime</td><td><a class="pr" href="https://github.com/bilibili/web-demuxer/pull/53">#53</a></td></tr><tr><td><span class="pill open">OPEN</span></td><td class="org">Telegram Desktop</td><td class="repo">telegramdesktop/tdesktop</td><td>Screen-reader announcements + accessible-name fallback</td><td><a class="pr" href="https://github.com/telegramdesktop/tdesktop/pull/31198">#31198</a></td></tr></tbody>
+    </table></div>
+    <details class="rejected">
+      <summary>☠ Rejected patches — the ones that didn't make it</summary>
+      <p class="lead small">Listed because a record with no failures in it isn't a record.</p>
+      <ul class="mono">
+        <li><a href="https://github.com/microsoft/TypeScript/pull/63548">microsoft/TypeScript#63548</a> — private property access on generic intersection types</li>
+        <li><a href="https://github.com/microsoft/typescript-go/pull/4290">typescript-go#4290</a> · <a href="https://github.com/microsoft/typescript-go/pull/4291">#4291</a> — same fix, native port</li>
+        <li><a href="https://github.com/nasa-gibs/worldview/pull/6699">nasa-gibs/worldview#6699</a> — Service Worker tile caching for GIBS tiles</li>
+        <li><a href="https://github.com/nasa-gibs/worldview/pull/6698">nasa-gibs/worldview#6698</a> — iOS Canvas memory leak on colormap change</li>
+        <li><a href="https://github.com/meta-pytorch/tritonparse/pull/405">tritonparse#405</a> — migrate zstandard → Python 3.14 stdlib zstd</li>
+      </ul>
+    </details>
+    <img class="panel" src="assets/war-room.svg" alt="upstream radar — organizations engaged" loading="lazy"/>
+  </section>
   <section id="repos" class="reveal">
     <h2>⬢ LIVE ARSENAL — fresh from GitHub API</h2>
     <div class="repos" id="repos"><p class="mono">summoning repos…</p></div>
@@ -190,37 +224,6 @@
 <script src="engine/forge.js" defer></script>
 <script src="app.js" defer></script>
 <script src="engine/warroom.js" defer></script>
-<script type="module">
-try {
-  const THREE = await import('three');
-  const cv = document.getElementById('hero3d');
-  const r = new THREE.WebGLRenderer({canvas: cv, alpha: true, antialias: false});
-  const s = new THREE.Scene();
-  const c = new THREE.PerspectiveCamera(60, 2, 0.1, 100);
-  c.position.z = 4;
-  const core = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1.4, 1),
-    new THREE.MeshBasicMaterial({color: 0xdc143c, wireframe: true, transparent: true, opacity: 0.85})
-  );
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(2.2, 0.02, 8, 80),
-    new THREE.MeshBasicMaterial({color: 0x00e5ff, transparent: true, opacity: 0.5})
-  );
-  const ring2 = new THREE.Mesh(
-    new THREE.TorusGeometry(2.7, 0.012, 8, 80),
-    new THREE.MeshBasicMaterial({color: 0xb026ff, transparent: true, opacity: 0.35})
-  );
-  ring.rotation.x = 1.2; ring2.rotation.x = 1.9; ring2.rotation.y = 0.4;
-  s.add(core, ring, ring2);
-  const fit = () => { const w = cv.clientWidth || 600, h = 220; r.setSize(w, h, false); c.aspect = w / h; c.updateProjectionMatrix(); };
-  fit(); addEventListener('resize', fit);
-  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  (function loop(t) {
-    if (!still) { core.rotation.y = t / 2400; core.rotation.x = t / 3600; ring.rotation.z = t / 5000; ring2.rotation.z = -t / 7000; }
-    r.render(s, c);
-    if (!still) requestAnimationFrame(loop);
-  })(0);
-} catch (e) { document.getElementById('hero3d').style.display = 'none'; }
-</script>
+<script src="engine/core3d.js" defer></script>
 </body>
 </html>

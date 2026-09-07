@@ -95,3 +95,63 @@ h2{scroll-margin-top:64px;padding-top:4px}
   .lead{font-size:13.5px}
   #totop{right:10px;bottom:10px;padding:8px 10px}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ULTRA — upstream evidence, machined panels, animated rails
+   ═══════════════════════════════════════════════════════════════════ */
+.panel{width:100%;display:block;margin:18px 0;border-radius:10px}
+
+.tblwrap{overflow-x:auto;border:1px solid #1b2534;border-radius:10px;
+  background:linear-gradient(180deg,#0f1621,#070a10);margin:14px 0 22px;
+  box-shadow:inset 0 1px 0 #ffffff08, 0 12px 34px #0008}
+table.ev{width:100%;border-collapse:collapse;font-size:13px;min-width:760px}
+table.ev thead th{position:sticky;top:0;background:#111a26;color:#5f6d7e;
+  font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1.6px;
+  text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid #1f2937;
+  white-space:nowrap}
+table.ev td{padding:9px 14px;border-bottom:1px solid #121a25;vertical-align:middle}
+table.ev tbody tr{transition:background .16s}
+table.ev tbody tr:hover{background:#121b26}
+table.ev tbody tr:nth-child(2n){background:#0b1119}
+table.ev tbody tr:nth-child(2n):hover{background:#131c28}
+table.ev td.org{color:#ffb000;font-weight:600;white-space:nowrap}
+table.ev td.repo{color:#6b7684;font-family:ui-monospace,monospace;
+  font-size:12px;white-space:nowrap}
+a.pr{color:#00e5ff;font-family:ui-monospace,monospace;font-weight:700;text-decoration:none;
+  white-space:nowrap;border-bottom:1px dashed #00e5ff55}
+a.pr:hover{border-bottom-style:solid;text-shadow:0 0 10px #00e5ff88}
+
+.pill{display:inline-block;font:700 9.5px/1 ui-monospace,monospace;letter-spacing:1.2px;
+  padding:5px 8px;border-radius:4px;white-space:nowrap}
+.pill.ok{color:#4ade80;background:#4ade8018;box-shadow:inset 0 0 0 1px #4ade8040}
+.pill.open{color:#ffb000;background:#ffb00015;box-shadow:inset 0 0 0 1px #ffb00038}
+
+details.rejected{border:1px solid #1b2534;border-radius:10px;padding:14px 18px;
+  background:#0a0f16;margin:8px 0 20px}
+details.rejected summary{cursor:pointer;font:600 13px/1.5 inherit;color:#e6edf3;
+  list-style:none;user-select:none}
+details.rejected summary::-webkit-details-marker{display:none}
+details.rejected summary::before{content:"▸ ";color:#dc143c;font-weight:700}
+details.rejected[open] summary::before{content:"▾ "}
+details.rejected ul{margin:12px 0 0;padding-left:20px;font-size:12.5px;line-height:2}
+details.rejected a{color:#4493f8}
+
+.lead.small{font-size:12.5px;color:#7d8590}
+h3{font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:#9aa7b5;
+  margin:26px 0 6px;font-weight:600}
+
+/* animated rail under every section heading */
+section h2{position:relative}
+section h2::after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:0;
+  background:linear-gradient(90deg,#dc143c,#ff6b35,#ffb000,#00e5ff,#b026ff);
+  animation:rail 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rail{to{width:min(420px,60%)}}
+
+/* hero canvas gets a soft bloom bed */
+.hero{position:relative}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(closest-side,#dc143c22,transparent 72%);}
+
+@media (prefers-reduced-motion: reduce){
+  section h2::after{animation:none;width:min(420px,60%)}
+}

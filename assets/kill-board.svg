@@ -1,31 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" font-family="'Cascadia Code','Fira Code',Consolas,Menlo,monospace"><title>kill board — 1337 seniors terminated</title>
-  <rect x="0" y="0" width="760" height="220" rx="10" fill="#0A0A10" stroke="#FF1744" stroke-width="1.5"/>
-  <text x="30" y="34" font-size="14" letter-spacing="4" fill="#F2F2F5">// KILL-BOARD <tspan fill="#5c5c70">— seniors terminated · live count</tspan></text>
-  <circle cx="722" cy="29" r="5" fill="#FF1744">
-    <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
-  </circle>
-  <g text-anchor="middle">
-    <rect x="30" y="50" width="220" height="70" rx="8" fill="#12060B" stroke="#DC143C"/>
-    <text x="140" y="74" font-size="11" letter-spacing="2" fill="#8a8aa0">SENIOR DEVS</text>
-    <text x="140" y="106" font-size="28" font-weight="800" fill="#DC143C">1337
-      <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
-    </text>
-    <rect x="30" y="132" width="220" height="70" rx="8" fill="#12060B" stroke="#B026FF"/>
-    <text x="140" y="156" font-size="11" letter-spacing="2" fill="#8a8aa0">ARCHITECTS</text>
-    <text x="140" y="188" font-size="28" font-weight="800" fill="#B026FF">666</text>
-    <rect x="270" y="50" width="220" height="70" rx="8" fill="#12060B" stroke="#00E5FF"/>
-    <text x="380" y="74" font-size="11" letter-spacing="2" fill="#8a8aa0">BUGS EXTERMINATED</text>
-    <text x="380" y="106" font-size="28" font-weight="800" fill="#00E5FF">9999+</text>
-    <rect x="270" y="132" width="220" height="70" rx="8" fill="#12060B" stroke="#39FF14"/>
-    <text x="380" y="156" font-size="11" letter-spacing="2" fill="#8a8aa0">UPTIME</text>
-    <text x="380" y="188" font-size="28" font-weight="800" fill="#39FF14">∞</text>
-    <rect x="510" y="50" width="220" height="152" rx="8" fill="#1A080D" stroke="#FFB000" stroke-width="1.5"/>
-    <text x="620" y="76" font-size="11" letter-spacing="2" fill="#FFB000">JUNIORS SPARED</text>
-    <text x="620" y="120" font-size="52" font-weight="800" fill="#FFB000">0
-      <animate attributeName="opacity" values="1;1;0.3;0.3" keyTimes="0;0.5;0.5;1" dur="1.4s" repeatCount="indefinite"/>
-    </text>
-    <text x="620" y="148" font-size="11" fill="#8a8aa0">NO MERCY PROTOCOL</text>
-    <text x="620" y="172" font-size="11" fill="#DC143C" font-weight="700">ACTIVE ☠</text>
-  </g>
-  <text x="380" y="214" text-anchor="middle" font-size="9" letter-spacing="3" fill="#3a3a55">ALL COUNTERS DRIFT UPWARD · 12s MASTER LOOP</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" font-family="'Cascadia Code','Fira Code','JetBrains Mono',SFMono-Regular,Consolas,Menlo,monospace" role="img" aria-label="merge board"><title>merge board</title><defs>
+<!-- ░ gradients ░ -->
+<linearGradient id="gFire" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#8B0020"/><stop offset="28%" stop-color="#DC143C"/>
+  <stop offset="58%" stop-color="#FF6B35"/><stop offset="82%" stop-color="#FFB000"/>
+  <stop offset="100%" stop-color="#FFE9A0"/>
+</linearGradient>
+<linearGradient id="gSpec" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#DC143C"/><stop offset="26%" stop-color="#FF6B35"/>
+  <stop offset="52%" stop-color="#FFB000"/><stop offset="76%" stop-color="#00E5FF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+  <animateTransform attributeName="gradientTransform" type="translate"
+    values="-1 0;1 0;-1 0" dur="9s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="gIce" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00E5FF"/><stop offset="50%" stop-color="#5B8CFF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+</linearGradient>
+<linearGradient id="gSheen" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="45%" stop-color="#fff" stop-opacity="0.10"/>
+  <stop offset="55%" stop-color="#fff" stop-opacity="0.16"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="gPanel" x1="0" y1="0" x2="0.35" y2="1">
+  <stop offset="0%" stop-color="#131A25"/><stop offset="45%" stop-color="#0B1017"/>
+  <stop offset="100%" stop-color="#05080D"/>
+</linearGradient>
+<radialGradient id="gVig" cx="50%" cy="45%" r="72%">
+  <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000" stop-opacity="0.72"/>
+</radialGradient>
+<radialGradient id="gCore">
+  <stop offset="0%" stop-color="#FFF4D6"/><stop offset="35%" stop-color="#FFB000"/>
+  <stop offset="70%" stop-color="#DC143C"/><stop offset="100%" stop-color="#3A0010" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="18%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="76%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+
+<!-- ░ patterns ░ -->
+<pattern id="pGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+  <path d="M24 0H0V24" fill="none" stroke="#141D2A" stroke-width="1"/>
+  <circle cx="0" cy="0" r="1" fill="#1E2A3B"/>
+</pattern>
+<pattern id="pFine" width="6" height="6" patternUnits="userSpaceOnUse">
+  <path d="M6 0H0V6" fill="none" stroke="#0F1620" stroke-width=".6"/>
+</pattern>
+<pattern id="pScan" width="3" height="3" patternUnits="userSpaceOnUse">
+  <rect width="3" height="1.4" fill="#000" opacity="0.20"/>
+</pattern>
+<pattern id="pHex" width="28" height="48" patternUnits="userSpaceOnUse">
+  <path d="M14 0 L28 8 L28 24 L14 32 L0 24 L0 8 Z" fill="none" stroke="#121A26" stroke-width="1"/>
+</pattern>
+
+<!-- ░ bloom tiers ░ -->
+<filter id="fBloom" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2" result="b1"/>
+  <feGaussianBlur stdDeviation="7" result="b2"/>
+  <feGaussianBlur stdDeviation="16" result="b3"/>
+  <feMerge><feMergeNode in="b3"/><feMergeNode in="b2"/><feMergeNode in="b1"/>
+    <feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlow" x="-30%" y="-30%" width="160%" height="160%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlowS" x="-25%" y="-25%" width="150%" height="150%">
+  <feGaussianBlur stdDeviation="1.3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fHalo" x="-60%" y="-60%" width="220%" height="220%">
+  <feGaussianBlur stdDeviation="14"/>
+</filter>
+
+<!-- ░ chromatic aberration ░ -->
+<filter id="fChroma" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset in="SourceGraphic" dx="-2.2" dy="0" result="r"/>
+  <feColorMatrix in="r" type="matrix" result="rc"
+    values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+  <feOffset in="SourceGraphic" dx="2.2" dy="0" result="b"/>
+  <feColorMatrix in="b" type="matrix" result="bc"
+    values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+  <feBlend in="rc" in2="bc" mode="screen" result="rb"/>
+  <feBlend in="SourceGraphic" in2="rb" mode="screen"/>
+</filter>
+
+<!-- ░ turbulence fire ░ -->
+<filter id="fFire" x="-25%" y="-45%" width="150%" height="190%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.016 0.045" numOctaves="4"
+                seed="7" result="n">
+    <animate attributeName="baseFrequency" dur="7s" repeatCount="indefinite"
+             values="0.016 0.045;0.024 0.062;0.016 0.045"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="26"
+                     xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feGaussianBlur in="d" stdDeviation="2.4" result="db"/>
+  <feMerge><feMergeNode in="db"/><feMergeNode in="d"/></feMerge>
+</filter>
+
+<!-- ░ plasma ░ -->
+<filter id="fPlasma" x="-20%" y="-20%" width="140%" height="140%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="5" seed="3" result="n">
+    <animate attributeName="seed" dur="10s" values="3;9;3" repeatCount="indefinite"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="14"
+                     xChannelSelector="R" yChannelSelector="B"/>
+</filter>
+
+<!-- ░ glitch displacement ░ -->
+<filter id="fGlitch" x="-12%" y="-12%" width="124%" height="124%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.00001 0.42" numOctaves="1"
+                seed="11" result="n">
+    <animate attributeName="baseFrequency" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1"
+             values="0.00001 0.42;0.00001 0.42;0.02 1.1;0.00001 0.42;0.03 0.9;0.00001 0.42"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R"
+                     yChannelSelector="G">
+    <animate attributeName="scale" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1" values="0;0;18;0;13;0"/>
+  </feDisplacementMap>
+</filter>
+
+<!-- ░ CRT barrel + noise ░ -->
+<filter id="fCRT" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" result="g"/>
+  <feColorMatrix in="g" type="saturate" values="0" result="gm"/>
+  <feComponentTransfer in="gm" result="gt">
+    <feFuncA type="linear" slope="0.07"/>
+  </feComponentTransfer>
+  <feBlend in="SourceGraphic" in2="gt" mode="screen"/>
+</filter>
+
+<!-- ░ inner shadow for recessed panels ░ -->
+<filter id="fInset" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset dx="0" dy="2"/><feGaussianBlur stdDeviation="3" result="o"/>
+  <feComposite in="SourceGraphic" in2="o" operator="over"/>
+</filter>
+
+<!-- ░ metallic edge ░ -->
+<filter id="fEmboss" x="-10%" y="-10%" width="120%" height="120%">
+  <feConvolveMatrix order="3" kernelMatrix="1 0 0  0 0 0  0 0 -1"
+                    divisor="1" bias="0.02" preserveAlpha="true"/>
+</filter>
+</defs><rect width="1000" height="420" rx="12" fill="url(#gPanel)"/><rect width="1000" height="420" rx="12" fill="url(#pGrid)" opacity=".55"/><rect width="1000" height="420" rx="12" fill="url(#pFine)" opacity=".5"/><rect width="1000" height="420" rx="12" fill="url(#gVig)"/><rect x=".5" y=".5" width="999" height="419" rx="12" fill="none" stroke="#1b2534" stroke-width="1"/><rect x="0" y="0" width="1000" height="2.5" rx="1" fill="url(#gSpec)"/><path d="M10,2 L2,2 L2,10" fill="none" stroke="#4ADE80" stroke-width="2" opacity=".85"/><path d="M990,2 L998,2 L998,10" fill="none" stroke="#4ADE80" stroke-width="2" opacity=".85"/><path d="M10,418 L2,418 L2,410" fill="none" stroke="#4ADE80" stroke-width="2" opacity=".85"/><path d="M990,418 L998,418 L998,410" fill="none" stroke="#4ADE80" stroke-width="2" opacity=".85"/><rect x="0" y="0" width="1000" height="36" fill="#000" opacity=".35"/><line x1="0" y1="36" x2="1000" y2="36" stroke="#4ADE80" stroke-opacity=".38"/><rect x="18" y="14" width="3" height="9" fill="#4ADE80"/><text x="30" y="23" font-size="11.5" font-weight="700" letter-spacing="2.6" fill="#4ADE80">MERGE BOARD — LANDED UPSTREAM</text><text x="982" y="23" text-anchor="end" font-size="10.5" letter-spacing="1.2" fill="#7d8590">13 merged · 48 submitted · 25 orgs</text><line x1="24" y1="70" x2="976" y2="70" stroke="#1b2534"/><text x="38" y="64" font-size="9.5" letter-spacing="1.8" fill="#41505f">STATUS</text><text x="106" y="64" font-size="9.5" letter-spacing="1.8" fill="#41505f">ORG</text><text x="196" y="64" font-size="9.5" letter-spacing="1.8" fill="#41505f">REPOSITORY</text><text x="368" y="64" font-size="9.5" letter-spacing="1.8" fill="#41505f">CONTRIBUTION</text><text x="972" y="64" text-anchor="end" font-size="9.5" letter-spacing="1.8" fill="#41505f">PR</text><g opacity="1"><rect x="24" y="84" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="96" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="96" font-size="11.5" fill="#FFB000">OWASP</text><text x="196" y="96" font-size="11.5" fill="#5d6a7a">agent-memory-guard</text><text x="368" y="96" font-size="11.5" fill="#E6EDF3">GitHub Action — memory vuln scanner</text><text x="972" y="96" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#18</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0333;0.0513;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="18" y="106" width="964" height="21" rx="3" fill="#0e1620" opacity=".55"/><rect x="24" y="109" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="121" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="121" font-size="11.5" fill="#FFB000">OWASP</text><text x="196" y="121" font-size="11.5" fill="#5d6a7a">agent-memory-guard</text><text x="368" y="121" font-size="11.5" fill="#E6EDF3">LlamaIndex integration adapter</text><text x="972" y="121" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#19</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0644;0.0824;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="24" y="134" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="146" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="146" font-size="11.5" fill="#FFB000">OWASP</text><text x="196" y="146" font-size="11.5" fill="#5d6a7a">agent-memory-guard</text><text x="368" y="146" font-size="11.5" fill="#E6EDF3">CrewAI integration adapter</text><text x="972" y="146" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#20</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0956;0.1136;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="18" y="156" width="964" height="21" rx="3" fill="#0e1620" opacity=".55"/><rect x="24" y="159" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="171" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="171" font-size="11.5" fill="#FFB000">OWASP</text><text x="196" y="171" font-size="11.5" fill="#5d6a7a">agent-memory-guard</text><text x="368" y="171" font-size="11.5" fill="#E6EDF3">Prometheus metrics exporter</text><text x="972" y="171" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#21</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1267;0.1447;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="24" y="184" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="196" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="196" font-size="11.5" fill="#FFB000">OWASP</text><text x="196" y="196" font-size="11.5" fill="#5d6a7a">agent-memory-guard</text><text x="368" y="196" font-size="11.5" fill="#E6EDF3">Policy.tiered() + memory taxonomy</text><text x="972" y="196" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#23</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1578;0.1758;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="18" y="206" width="964" height="21" rx="3" fill="#0e1620" opacity=".55"/><rect x="24" y="209" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="221" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="221" font-size="11.5" fill="#FFB000">OWASP</text><text x="196" y="221" font-size="11.5" fill="#5d6a7a">agent-memory-guard</text><text x="368" y="221" font-size="11.5" fill="#E6EDF3">source_type provenance on SecurityEvent</text><text x="972" y="221" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#24</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1889;0.2069;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="24" y="234" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="246" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="246" font-size="11.5" fill="#FFB000">OWASP</text><text x="196" y="246" font-size="11.5" fill="#5d6a7a">agent-memory-guard</text><text x="368" y="246" font-size="11.5" fill="#E6EDF3">multi-turn delayed-attack benchmark</text><text x="972" y="246" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#42</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2200;0.2380;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="18" y="256" width="964" height="21" rx="3" fill="#0e1620" opacity=".55"/><rect x="24" y="259" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="271" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="271" font-size="11.5" fill="#FFB000">nexu-io</text><text x="196" y="271" font-size="11.5" fill="#5d6a7a">open-design</text><text x="368" y="271" font-size="11.5" fill="#E6EDF3">legacy ~/.fnm toolchain resolution</text><text x="972" y="271" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#1110</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2511;0.2691;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="24" y="284" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="296" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="296" font-size="11.5" fill="#FFB000">Authora</text><text x="196" y="296" font-size="11.5" fill="#5d6a7a">auth</text><text x="368" y="296" font-size="11.5" fill="#E6EDF3">OTP login hardening · legacy removal</text><text x="972" y="296" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#3</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2822;0.3002;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="18" y="306" width="964" height="21" rx="3" fill="#0e1620" opacity=".55"/><rect x="24" y="309" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="321" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="321" font-size="11.5" fill="#FFB000">HiveSofts</text><text x="196" y="321" font-size="11.5" fill="#5d6a7a">hive-app</text><text x="368" y="321" font-size="11.5" fill="#E6EDF3">backend refactor</text><text x="972" y="321" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#37</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3133;0.3313;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="24" y="334" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="346" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="346" font-size="11.5" fill="#FFB000">TaniCSS</text><text x="196" y="346" font-size="11.5" fill="#5d6a7a">Tani</text><text x="368" y="346" font-size="11.5" fill="#E6EDF3">v2.0 framework upgrade + docs</text><text x="972" y="346" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#1 #2</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3444;0.3624;1" dur="9s" repeatCount="indefinite"/></g><g opacity="1"><rect x="18" y="356" width="964" height="21" rx="3" fill="#0e1620" opacity=".55"/><rect x="24" y="359" width="5" height="14" rx="2" fill="#4ADE80"/><text x="38" y="371" font-size="10.5" font-weight="700" letter-spacing=".8" fill="#4ADE80">MERGED</text><text x="106" y="371" font-size="11.5" fill="#FFB000">MY-Jafari</text><text x="196" y="371" font-size="11.5" fill="#5d6a7a">flappy-2048</text><text x="368" y="371" font-size="11.5" fill="#E6EDF3">9 bug fixes · save persistence</text><text x="972" y="371" text-anchor="end" font-size="11.5" font-weight="700" fill="#00E5FF">#1</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3756;0.3936;1" dur="9s" repeatCount="indefinite"/></g><clipPath id="mbc"><rect x="18" y="80" width="964" height="320" rx="4"/></clipPath><g clip-path="url(#mbc)"><rect x="18" y="0" width="964" height="30" fill="#4ADE80" opacity=".055"><animate attributeName="y" values="70;400;70" dur="7s" repeatCount="indefinite"/></rect></g><rect width="1000" height="420" rx="12" fill="url(#pScan)"/><rect x="-1000" y="0" width="550" height="420" fill="url(#gSheen)" transform="skewX(-18)"><animate attributeName="x" values="-600;1200" dur="10s" repeatCount="indefinite"/></rect></svg>

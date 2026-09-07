@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="330" viewBox="0 0 490 330" font-family="'Cascadia Code','Fira Code','JetBrains Mono',SFMono-Regular,Consolas,Menlo,monospace" role="img" aria-label="language radar"><title>language radar</title><defs>
+<!-- ░ gradients ░ -->
+<linearGradient id="gFire" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#8B0020"/><stop offset="28%" stop-color="#DC143C"/>
+  <stop offset="58%" stop-color="#FF6B35"/><stop offset="82%" stop-color="#FFB000"/>
+  <stop offset="100%" stop-color="#FFE9A0"/>
+</linearGradient>
+<linearGradient id="gSpec" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#DC143C"/><stop offset="26%" stop-color="#FF6B35"/>
+  <stop offset="52%" stop-color="#FFB000"/><stop offset="76%" stop-color="#00E5FF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+  <animateTransform attributeName="gradientTransform" type="translate"
+    values="-1 0;1 0;-1 0" dur="9s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="gIce" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00E5FF"/><stop offset="50%" stop-color="#5B8CFF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+</linearGradient>
+<linearGradient id="gSheen" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="45%" stop-color="#fff" stop-opacity="0.10"/>
+  <stop offset="55%" stop-color="#fff" stop-opacity="0.16"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="gPanel" x1="0" y1="0" x2="0.35" y2="1">
+  <stop offset="0%" stop-color="#131A25"/><stop offset="45%" stop-color="#0B1017"/>
+  <stop offset="100%" stop-color="#05080D"/>
+</linearGradient>
+<radialGradient id="gVig" cx="50%" cy="45%" r="72%">
+  <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000" stop-opacity="0.72"/>
+</radialGradient>
+<radialGradient id="gCore">
+  <stop offset="0%" stop-color="#FFF4D6"/><stop offset="35%" stop-color="#FFB000"/>
+  <stop offset="70%" stop-color="#DC143C"/><stop offset="100%" stop-color="#3A0010" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="18%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="76%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+
+<!-- ░ patterns ░ -->
+<pattern id="pGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+  <path d="M24 0H0V24" fill="none" stroke="#141D2A" stroke-width="1"/>
+  <circle cx="0" cy="0" r="1" fill="#1E2A3B"/>
+</pattern>
+<pattern id="pFine" width="6" height="6" patternUnits="userSpaceOnUse">
+  <path d="M6 0H0V6" fill="none" stroke="#0F1620" stroke-width=".6"/>
+</pattern>
+<pattern id="pScan" width="3" height="3" patternUnits="userSpaceOnUse">
+  <rect width="3" height="1.4" fill="#000" opacity="0.20"/>
+</pattern>
+<pattern id="pHex" width="28" height="48" patternUnits="userSpaceOnUse">
+  <path d="M14 0 L28 8 L28 24 L14 32 L0 24 L0 8 Z" fill="none" stroke="#121A26" stroke-width="1"/>
+</pattern>
+
+<!-- ░ bloom tiers ░ -->
+<filter id="fBloom" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2" result="b1"/>
+  <feGaussianBlur stdDeviation="7" result="b2"/>
+  <feGaussianBlur stdDeviation="16" result="b3"/>
+  <feMerge><feMergeNode in="b3"/><feMergeNode in="b2"/><feMergeNode in="b1"/>
+    <feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlow" x="-30%" y="-30%" width="160%" height="160%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlowS" x="-25%" y="-25%" width="150%" height="150%">
+  <feGaussianBlur stdDeviation="1.3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fHalo" x="-60%" y="-60%" width="220%" height="220%">
+  <feGaussianBlur stdDeviation="14"/>
+</filter>
+
+<!-- ░ chromatic aberration ░ -->
+<filter id="fChroma" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset in="SourceGraphic" dx="-2.2" dy="0" result="r"/>
+  <feColorMatrix in="r" type="matrix" result="rc"
+    values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+  <feOffset in="SourceGraphic" dx="2.2" dy="0" result="b"/>
+  <feColorMatrix in="b" type="matrix" result="bc"
+    values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+  <feBlend in="rc" in2="bc" mode="screen" result="rb"/>
+  <feBlend in="SourceGraphic" in2="rb" mode="screen"/>
+</filter>
+
+<!-- ░ turbulence fire ░ -->
+<filter id="fFire" x="-25%" y="-45%" width="150%" height="190%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.016 0.045" numOctaves="4"
+                seed="7" result="n">
+    <animate attributeName="baseFrequency" dur="7s" repeatCount="indefinite"
+             values="0.016 0.045;0.024 0.062;0.016 0.045"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="26"
+                     xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feGaussianBlur in="d" stdDeviation="2.4" result="db"/>
+  <feMerge><feMergeNode in="db"/><feMergeNode in="d"/></feMerge>
+</filter>
+
+<!-- ░ plasma ░ -->
+<filter id="fPlasma" x="-20%" y="-20%" width="140%" height="140%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="5" seed="3" result="n">
+    <animate attributeName="seed" dur="10s" values="3;9;3" repeatCount="indefinite"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="14"
+                     xChannelSelector="R" yChannelSelector="B"/>
+</filter>
+
+<!-- ░ glitch displacement ░ -->
+<filter id="fGlitch" x="-12%" y="-12%" width="124%" height="124%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.00001 0.42" numOctaves="1"
+                seed="11" result="n">
+    <animate attributeName="baseFrequency" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1"
+             values="0.00001 0.42;0.00001 0.42;0.02 1.1;0.00001 0.42;0.03 0.9;0.00001 0.42"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R"
+                     yChannelSelector="G">
+    <animate attributeName="scale" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1" values="0;0;18;0;13;0"/>
+  </feDisplacementMap>
+</filter>
+
+<!-- ░ CRT barrel + noise ░ -->
+<filter id="fCRT" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" result="g"/>
+  <feColorMatrix in="g" type="saturate" values="0" result="gm"/>
+  <feComponentTransfer in="gm" result="gt">
+    <feFuncA type="linear" slope="0.07"/>
+  </feComponentTransfer>
+  <feBlend in="SourceGraphic" in2="gt" mode="screen"/>
+</filter>
+
+<!-- ░ inner shadow for recessed panels ░ -->
+<filter id="fInset" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset dx="0" dy="2"/><feGaussianBlur stdDeviation="3" result="o"/>
+  <feComposite in="SourceGraphic" in2="o" operator="over"/>
+</filter>
+
+<!-- ░ metallic edge ░ -->
+<filter id="fEmboss" x="-10%" y="-10%" width="120%" height="120%">
+  <feConvolveMatrix order="3" kernelMatrix="1 0 0  0 0 0  0 0 -1"
+                    divisor="1" bias="0.02" preserveAlpha="true"/>
+</filter>
+</defs><rect width="490" height="330" rx="12" fill="url(#gPanel)"/><rect width="490" height="330" rx="12" fill="url(#pGrid)" opacity=".55"/><rect width="490" height="330" rx="12" fill="url(#pFine)" opacity=".5"/><rect width="490" height="330" rx="12" fill="url(#gVig)"/><rect x=".5" y=".5" width="489" height="329" rx="12" fill="none" stroke="#1b2534" stroke-width="1"/><rect x="0" y="0" width="490" height="2.5" rx="1" fill="url(#gSpec)"/><path d="M10,2 L2,2 L2,10" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><path d="M480,2 L488,2 L488,10" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><path d="M10,328 L2,328 L2,320" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><path d="M480,328 L488,328 L488,320" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><rect x="0" y="0" width="490" height="36" fill="#000" opacity=".35"/><line x1="0" y1="36" x2="490" y2="36" stroke="#00E5FF" stroke-opacity=".38"/><rect x="18" y="14" width="3" height="9" fill="#00E5FF"/><text x="30" y="23" font-size="11.5" font-weight="700" letter-spacing="2.6" fill="#00E5FF">LANGUAGE SWEEP</text><text x="472" y="23" text-anchor="end" font-size="10.5" letter-spacing="1.2" fill="#7d8590">silicon → cloud</text><circle cx="245" cy="175" r="118" fill="#03121A" opacity=".5"/><circle cx="245" cy="175" r="30" fill="none" stroke="#00E5FF" stroke-opacity="0.07"/><circle cx="245" cy="175" r="59" fill="none" stroke="#00E5FF" stroke-opacity="0.09"/><circle cx="245" cy="175" r="88" fill="none" stroke="#00E5FF" stroke-opacity="0.11"/><circle cx="245" cy="175" r="118" fill="none" stroke="#00E5FF" stroke-opacity="0.13"/><line x1="245" y1="175" x2="363" y2="175" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="356" y2="215" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="335" y2="251" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="304" y2="277" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="265" y2="291" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="225" y2="291" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="186" y2="277" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="155" y2="251" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="134" y2="215" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="127" y2="175" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="134" y2="135" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="155" y2="99" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="186" y2="73" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="225" y2="59" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="265" y2="59" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="304" y2="73" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="335" y2="99" stroke="#00E5FF" stroke-opacity=".06"/><line x1="245" y1="175" x2="356" y2="135" stroke="#00E5FF" stroke-opacity=".06"/><g><path d="M245,175 L363,175 A118,118 0 0,0 361,155 Z" fill="#00E5FF" opacity="0.150"/><path d="M245,175 L361,155 A118,118 0 0,0 356,135 Z" fill="#00E5FF" opacity="0.126"/><path d="M245,175 L356,135 A118,118 0 0,0 347,116 Z" fill="#00E5FF" opacity="0.102"/><path d="M245,175 L347,116 A118,118 0 0,0 335,99 Z" fill="#00E5FF" opacity="0.078"/><path d="M245,175 L335,99 A118,118 0 0,0 321,85 Z" fill="#00E5FF" opacity="0.054"/><path d="M245,175 L321,85 A118,118 0 0,0 304,73 Z" fill="#00E5FF" opacity="0.030"/><line x1="245" y1="175" x2="363" y2="175" stroke="#00E5FF" stroke-width="1.6" filter="url(#fGlowS)"/><animateTransform attributeName="transform" type="rotate" from="0 245 175" to="360 245 175" dur="3.8s" repeatCount="indefinite"/></g><circle cx="347" cy="157" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="2.0s" repeatCount="indefinite"/></circle><circle cx="347" cy="157" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-0.0s" repeatCount="indefinite"/></circle><text x="356" y="161" font-size="10.5" fill="#9aa7b5">asm</text><circle cx="343" cy="221" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="2.25s" repeatCount="indefinite"/></circle><circle cx="343" cy="221" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-0.28s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-0.28s" repeatCount="indefinite"/></circle><text x="352" y="225" font-size="10.5" fill="#9aa7b5">C</text><circle cx="285" cy="261" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="2.5s" repeatCount="indefinite"/></circle><circle cx="285" cy="261" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-0.56s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-0.56s" repeatCount="indefinite"/></circle><text x="294" y="265" font-size="10.5" fill="#9aa7b5">C++</text><circle cx="219" cy="271" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="2.75s" repeatCount="indefinite"/></circle><circle cx="219" cy="271" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-0.8400000000000001s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-0.8400000000000001s" repeatCount="indefinite"/></circle><text x="228" y="275" font-size="10.5" fill="#9aa7b5">Rust</text><circle cx="173" cy="225" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="3.0s" repeatCount="indefinite"/></circle><circle cx="173" cy="225" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-1.12s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-1.12s" repeatCount="indefinite"/></circle><text x="182" y="229" font-size="10.5" fill="#9aa7b5">Go</text><circle cx="144" cy="166" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="3.25s" repeatCount="indefinite"/></circle><circle cx="144" cy="166" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-1.4000000000000001s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-1.4000000000000001s" repeatCount="indefinite"/></circle><text x="153" y="170" font-size="10.5" fill="#9aa7b5">Python</text><circle cx="171" cy="101" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="3.5s" repeatCount="indefinite"/></circle><circle cx="171" cy="101" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-1.6800000000000002s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-1.6800000000000002s" repeatCount="indefinite"/></circle><text x="180" y="105" font-size="10.5" fill="#9aa7b5">TS</text><circle cx="238" cy="97" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="3.75s" repeatCount="indefinite"/></circle><circle cx="238" cy="97" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-1.9600000000000002s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-1.9600000000000002s" repeatCount="indefinite"/></circle><text x="247" y="101" font-size="10.5" fill="#9aa7b5">PHP</text><circle cx="292" cy="107" r="3.4" fill="#00E5FF" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.25;1" dur="4.0s" repeatCount="indefinite"/></circle><circle cx="292" cy="107" r="3.4" fill="none" stroke="#00E5FF"><animate attributeName="r" values="3.4;15" dur="2.6s" begin="-2.24s" repeatCount="indefinite"/><animate attributeName="opacity" values=".7;0" dur="2.6s" begin="-2.24s" repeatCount="indefinite"/></circle><text x="301" y="111" font-size="10.5" fill="#9aa7b5">k8s</text><circle cx="245" cy="175" r="118" fill="none" stroke="#00E5FF" stroke-opacity=".3"/><text x="245.0" y="312" text-anchor="middle" font-size="10" letter-spacing="1.6" fill="#41505f">NO LAYER SKIPPED</text><rect width="490" height="330" rx="12" fill="url(#pScan)"/></svg>

@@ -1,49 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" font-family="'Cascadia Code','Fira Code',Consolas,Menlo,monospace"><title>kernel boot sequence — soul mounted, mercy not found</title>
-  <defs>
-    <linearGradient id="termGlow5" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#DC143C" stop-opacity="0.10"/>
-      <stop offset="1" stop-color="#B026FF" stop-opacity="0.05"/>
-    </linearGradient>
-  </defs>
-  <rect x="10" y="10" width="740" height="360" rx="12" fill="#0A0A10" stroke="#DC143C" stroke-width="1.5" opacity="0.97"/>
-  <rect x="10" y="10" width="740" height="360" rx="12" fill="url(#termGlow5)"/>
-  <rect x="11.5" y="11.5" width="737" height="357" rx="11" fill="none" stroke="#B026FF" stroke-width="0.6" opacity="0.35"/>
-  <rect x="11.5" y="11.5" width="737" height="34" rx="11" fill="#101018"/>
-  <line x1="12" y1="45" x2="748" y2="45" stroke="#DC143C" stroke-width="1" opacity="0.5"/>
-  <circle cx="34" cy="28" r="5.5" fill="#DC143C"/>
-  <circle cx="54" cy="28" r="5.5" fill="#B026FF"/>
-  <circle cx="74" cy="28" r="5.5" fill="#00E5FF"/>
-  <text x="380" y="33" text-anchor="middle" font-size="13" fill="#8a8aa0">root@hesam-oxe: ~/kernel — summon_operator.sh · v5</text>
-  <g font-size="14.5">
-    <text x="34" y="80" fill="#39FF14">root@hesam-oxe:~# ./summon_operator.sh --annihilate
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.03;0.05;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="112" fill="#E6E6E6">[ <tspan fill="#39FF14"> OK  </tspan>] mounting /dev/talent ................ done
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.12;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="144" fill="#E6E6E6">[ <tspan fill="#39FF14"> OK  </tspan>] mounting /dev/soul ................. done
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.22;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="176" fill="#E6E6E6">[ <tspan fill="#39FF14"> OK  </tspan>] loading modules :: asm·rust·go·c·cpp·py·ts
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.32;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="208" fill="#E6E6E6">[ <tspan fill="#FF1744">FAIL</tspan>] mercy.service not found — <tspan fill="#DC143C">good.</tspan>
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.40;0.42;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="240" fill="#E6E6E6">[ <tspan fill="#FFB000">WARN </tspan>] social-life.service not found — skipping
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.50;0.52;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="272" fill="#E6E6E6">[ <tspan fill="#00E5FF"> OK  </tspan>] fear module loaded → <tspan font-weight="700" fill="#DC143C">1337 targets locked</tspan>
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.60;0.62;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="304" fill="#E6E6E6">[ <tspan fill="#00E5FF"> OK  </tspan>] privilege escalation → <tspan font-weight="700" fill="#DC143C">ROOT</tspan>
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.68;0.70;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-    <text x="34" y="336" fill="#DC143C" font-weight="700">[ BOOT ] HESAM JAMALI :: KERNEL-LEVEL OPERATOR READY
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.78;0.80;1" dur="12s" repeatCount="indefinite"/>
-    </text>
-  </g>
-  <rect x="12" y="0" width="736" height="2.5" fill="#DC143C" opacity="0.13">
-    <animate attributeName="y" values="46;366;46" dur="12s" repeatCount="indefinite"/>
-  </rect>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="372" viewBox="0 0 1000 372" font-family="'Cascadia Code','Fira Code','JetBrains Mono',SFMono-Regular,Consolas,Menlo,monospace" role="img" aria-label="boot sequence"><title>boot sequence</title><defs>
+<!-- ░ gradients ░ -->
+<linearGradient id="gFire" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#8B0020"/><stop offset="28%" stop-color="#DC143C"/>
+  <stop offset="58%" stop-color="#FF6B35"/><stop offset="82%" stop-color="#FFB000"/>
+  <stop offset="100%" stop-color="#FFE9A0"/>
+</linearGradient>
+<linearGradient id="gSpec" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#DC143C"/><stop offset="26%" stop-color="#FF6B35"/>
+  <stop offset="52%" stop-color="#FFB000"/><stop offset="76%" stop-color="#00E5FF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+  <animateTransform attributeName="gradientTransform" type="translate"
+    values="-1 0;1 0;-1 0" dur="9s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="gIce" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00E5FF"/><stop offset="50%" stop-color="#5B8CFF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+</linearGradient>
+<linearGradient id="gSheen" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="45%" stop-color="#fff" stop-opacity="0.10"/>
+  <stop offset="55%" stop-color="#fff" stop-opacity="0.16"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="gPanel" x1="0" y1="0" x2="0.35" y2="1">
+  <stop offset="0%" stop-color="#131A25"/><stop offset="45%" stop-color="#0B1017"/>
+  <stop offset="100%" stop-color="#05080D"/>
+</linearGradient>
+<radialGradient id="gVig" cx="50%" cy="45%" r="72%">
+  <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000" stop-opacity="0.72"/>
+</radialGradient>
+<radialGradient id="gCore">
+  <stop offset="0%" stop-color="#FFF4D6"/><stop offset="35%" stop-color="#FFB000"/>
+  <stop offset="70%" stop-color="#DC143C"/><stop offset="100%" stop-color="#3A0010" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="18%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="76%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+
+<!-- ░ patterns ░ -->
+<pattern id="pGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+  <path d="M24 0H0V24" fill="none" stroke="#141D2A" stroke-width="1"/>
+  <circle cx="0" cy="0" r="1" fill="#1E2A3B"/>
+</pattern>
+<pattern id="pFine" width="6" height="6" patternUnits="userSpaceOnUse">
+  <path d="M6 0H0V6" fill="none" stroke="#0F1620" stroke-width=".6"/>
+</pattern>
+<pattern id="pScan" width="3" height="3" patternUnits="userSpaceOnUse">
+  <rect width="3" height="1.4" fill="#000" opacity="0.20"/>
+</pattern>
+<pattern id="pHex" width="28" height="48" patternUnits="userSpaceOnUse">
+  <path d="M14 0 L28 8 L28 24 L14 32 L0 24 L0 8 Z" fill="none" stroke="#121A26" stroke-width="1"/>
+</pattern>
+
+<!-- ░ bloom tiers ░ -->
+<filter id="fBloom" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2" result="b1"/>
+  <feGaussianBlur stdDeviation="7" result="b2"/>
+  <feGaussianBlur stdDeviation="16" result="b3"/>
+  <feMerge><feMergeNode in="b3"/><feMergeNode in="b2"/><feMergeNode in="b1"/>
+    <feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlow" x="-30%" y="-30%" width="160%" height="160%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlowS" x="-25%" y="-25%" width="150%" height="150%">
+  <feGaussianBlur stdDeviation="1.3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fHalo" x="-60%" y="-60%" width="220%" height="220%">
+  <feGaussianBlur stdDeviation="14"/>
+</filter>
+
+<!-- ░ chromatic aberration ░ -->
+<filter id="fChroma" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset in="SourceGraphic" dx="-2.2" dy="0" result="r"/>
+  <feColorMatrix in="r" type="matrix" result="rc"
+    values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+  <feOffset in="SourceGraphic" dx="2.2" dy="0" result="b"/>
+  <feColorMatrix in="b" type="matrix" result="bc"
+    values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+  <feBlend in="rc" in2="bc" mode="screen" result="rb"/>
+  <feBlend in="SourceGraphic" in2="rb" mode="screen"/>
+</filter>
+
+<!-- ░ turbulence fire ░ -->
+<filter id="fFire" x="-25%" y="-45%" width="150%" height="190%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.016 0.045" numOctaves="4"
+                seed="7" result="n">
+    <animate attributeName="baseFrequency" dur="7s" repeatCount="indefinite"
+             values="0.016 0.045;0.024 0.062;0.016 0.045"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="26"
+                     xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feGaussianBlur in="d" stdDeviation="2.4" result="db"/>
+  <feMerge><feMergeNode in="db"/><feMergeNode in="d"/></feMerge>
+</filter>
+
+<!-- ░ plasma ░ -->
+<filter id="fPlasma" x="-20%" y="-20%" width="140%" height="140%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="5" seed="3" result="n">
+    <animate attributeName="seed" dur="10s" values="3;9;3" repeatCount="indefinite"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="14"
+                     xChannelSelector="R" yChannelSelector="B"/>
+</filter>
+
+<!-- ░ glitch displacement ░ -->
+<filter id="fGlitch" x="-12%" y="-12%" width="124%" height="124%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.00001 0.42" numOctaves="1"
+                seed="11" result="n">
+    <animate attributeName="baseFrequency" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1"
+             values="0.00001 0.42;0.00001 0.42;0.02 1.1;0.00001 0.42;0.03 0.9;0.00001 0.42"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R"
+                     yChannelSelector="G">
+    <animate attributeName="scale" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1" values="0;0;18;0;13;0"/>
+  </feDisplacementMap>
+</filter>
+
+<!-- ░ CRT barrel + noise ░ -->
+<filter id="fCRT" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" result="g"/>
+  <feColorMatrix in="g" type="saturate" values="0" result="gm"/>
+  <feComponentTransfer in="gm" result="gt">
+    <feFuncA type="linear" slope="0.07"/>
+  </feComponentTransfer>
+  <feBlend in="SourceGraphic" in2="gt" mode="screen"/>
+</filter>
+
+<!-- ░ inner shadow for recessed panels ░ -->
+<filter id="fInset" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset dx="0" dy="2"/><feGaussianBlur stdDeviation="3" result="o"/>
+  <feComposite in="SourceGraphic" in2="o" operator="over"/>
+</filter>
+
+<!-- ░ metallic edge ░ -->
+<filter id="fEmboss" x="-10%" y="-10%" width="120%" height="120%">
+  <feConvolveMatrix order="3" kernelMatrix="1 0 0  0 0 0  0 0 -1"
+                    divisor="1" bias="0.02" preserveAlpha="true"/>
+</filter>
+</defs><rect width="1000" height="372" rx="12" fill="url(#gPanel)"/><rect width="1000" height="372" rx="12" fill="url(#pGrid)" opacity=".55"/><rect width="1000" height="372" rx="12" fill="url(#pFine)" opacity=".5"/><rect width="1000" height="372" rx="12" fill="url(#gVig)"/><rect x=".5" y=".5" width="999" height="371" rx="12" fill="none" stroke="#1b2534" stroke-width="1"/><rect x="0" y="0" width="1000" height="2.5" rx="1" fill="url(#gSpec)"/><path d="M10,2 L2,2 L2,10" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><path d="M990,2 L998,2 L998,10" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><path d="M10,370 L2,370 L2,362" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><path d="M990,370 L998,370 L998,362" fill="none" stroke="#00E5FF" stroke-width="2" opacity=".85"/><rect x="0" y="0" width="1000" height="36" fill="#000" opacity=".35"/><line x1="0" y1="36" x2="1000" y2="36" stroke="#00E5FF" stroke-opacity=".38"/><rect x="18" y="14" width="3" height="9" fill="#00E5FF"/><text x="30" y="23" font-size="11.5" font-weight="700" letter-spacing="2.6" fill="#00E5FF">DMESG — FORGE BOOT SEQUENCE</text><text x="982" y="23" text-anchor="end" font-size="10.5" letter-spacing="1.2" fill="#7d8590">ring 0</text><g opacity="1"><text x="28" y="76" font-size="12" fill="#3f4b5c">[ 0.000000 ]</text><text x="132" y="76" font-size="12.3" fill="#7d8590">forge: kernel v3 booting on x86_64</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0400;0.0580;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="98" font-size="12" fill="#3f4b5c">[ 0.014820 ]</text><text x="132" y="98" font-size="12.3" fill="#E6EDF3">lexer          55 tokens</text><rect x="908" y="87" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="98" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1020;0.1200;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="120" font-size="12" fill="#3f4b5c">[ 0.031140 ]</text><text x="132" y="120" font-size="12.3" fill="#E6EDF3">pratt parser   AST built · 2 functions</text><rect x="908" y="109" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="120" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1640;0.1820;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="142" font-size="12" fill="#3f4b5c">[ 0.048002 ]</text><text x="132" y="142" font-size="12.3" fill="#E6EDF3">type checker   0 errors · source-mapped carets</text><rect x="908" y="131" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="142" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2260;0.2440;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="164" font-size="12" fill="#3f4b5c">[ 0.061337 ]</text><text x="132" y="164" font-size="12.3" fill="#FFB000">optimizer      31 → 12 ops · 5 folds · 2 dce</text><rect x="908" y="153" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="164" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2880;0.3060;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="186" font-size="12" fill="#3f4b5c">[ 0.079551 ]</text><text x="132" y="186" font-size="12.3" fill="#E6EDF3">codegen        bytecode emitted</text><rect x="908" y="175" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="186" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3500;0.3680;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="208" font-size="12" fill="#3f4b5c">[ 0.093118 ]</text><text x="132" y="208" font-size="12.3" fill="#4ADE80">stack vm       fib(20) = 6765 in 218,913 steps</text><rect x="908" y="197" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="208" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4120;0.4300;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="230" font-size="12" fill="#3f4b5c">[ 0.104900 ]</text><text x="132" y="230" font-size="12.3" fill="#00E5FF">wasm           253 bytes · validate() = true</text><rect x="908" y="219" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="230" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4740;0.4920;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="252" font-size="12" fill="#3f4b5c">[ 0.118773 ]</text><text x="132" y="252" font-size="12.3" fill="#00E5FF">sha-256        NIST vectors · 200/200 vs openssl</text><rect x="908" y="241" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="252" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5360;0.5540;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="274" font-size="12" fill="#3f4b5c">[ 0.131204 ]</text><text x="132" y="274" font-size="12.3" fill="#B026FF">thompson nfa   (a|a)*b ×40 in 0.66ms · 10 states</text><rect x="908" y="263" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="274" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5980;0.6160;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="296" font-size="12" fill="#3f4b5c">[ 0.138002 ]</text><text x="132" y="296" font-size="12.3" fill="#4ADE80">n-body         200 bodies · energy drift 0.0000%</text><rect x="908" y="285" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="296" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">OK</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6600;0.6780;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="318" font-size="12" fill="#3f4b5c">[ 0.140000 ]</text><text x="132" y="318" font-size="12.3" fill="#DC143C">mercy.service  not found</text><rect x="908" y="307" width="62" height="16" rx="3" fill="#FFB000" opacity=".12"/><text x="939" y="318" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#FFB000">SKIP</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.7220;0.7400;1" dur="10s" repeatCount="indefinite"/></g><g opacity="1"><text x="28" y="340" font-size="12" fill="#3f4b5c">[ 0.142000 ]</text><text x="132" y="340" font-size="12.3" fill="#4ADE80">boot complete — all subsystems nominal</text><rect x="908" y="329" width="62" height="16" rx="3" fill="#4ADE80" opacity=".12"/><text x="939" y="340" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1" fill="#4ADE80">DONE</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.7840;0.8020;1" dur="10s" repeatCount="indefinite"/></g><rect x="28" y="351" width="9" height="14" fill="#4ADE80"><animate attributeName="opacity" values="1;0;1" dur=".9s" repeatCount="indefinite"/></rect><rect x="28" y="350" width="944" height="3" rx="1.5" fill="#111925"/><rect x="28" y="350" width="0" height="3" rx="1.5" fill="url(#gSpec)"><animate attributeName="width" values="0;944" dur="8.5s" repeatCount="indefinite"/></rect><rect width="1000" height="372" rx="12" fill="url(#pScan)"/></svg>

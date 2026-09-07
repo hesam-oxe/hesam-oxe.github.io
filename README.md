@@ -3,7 +3,8 @@
 **Not a portfolio. A proof.**
 
 Every claim on this site executes in the visitor's browser, live, with verifiable output.
-No backend. No frameworks. No build step. **Zero runtime dependencies.**
+No backend. No frameworks. No build step. **Zero runtime dependencies** — the 3D hero is a
+hand-written perspective renderer (`engine/core3d.js`, ~90 lines), not three.js from a CDN.
 
 🔗 **https://hesam-oxe.github.io/**
 
@@ -43,12 +44,24 @@ try to break them.
 index.html              # markup, no framework
 styles.css              # hand-written CSS, no preprocessor
 app.js                  # reveal-on-scroll, shell, live GitHub API
+sw.js                   # offline cache-first service worker
 engine/
   compiler.js           # FORGE: full compiler toolchain + stack VM
   forge.js              # SHA-256, raytracer, N-body, Thompson NFA, sorting lab
   warroom.js            # wires the arsenal to the DOM
+  core3d.js             # perspective 3D wireframe renderer — replaces three.js
   core.wasm.b64         # 253-byte hand-emitted WebAssembly module
+assets/                 # 30 self-hosted animated SVG panels
 ```
+
+## Upstream
+
+The engines prove I can build. The `UPSTREAM` section proves maintainers merged it:
+**13 patches merged across 25 organizations** — seven of them into the OWASP Agent Memory
+Guard project (CrewAI and LlamaIndex adapters, a Prometheus exporter, a CI vulnerability
+scanner, and a threat-model extension to its benchmark suite). Open PRs against LLVM, Go,
+Apache SeaTunnel, Apache Gravitino, Meta's tritonparse and Sphinx are listed separately and
+labelled honestly — as are six patches that were rejected.
 
 ## Verified
 

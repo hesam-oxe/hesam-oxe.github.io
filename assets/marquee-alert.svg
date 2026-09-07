@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="56" viewBox="0 0 1000 56" font-family="'Cascadia Code','Fira Code','JetBrains Mono',SFMono-Regular,Consolas,Menlo,monospace" role="img" aria-label="verified facts ticker"><title>verified facts ticker</title><defs>
+<!-- ░ gradients ░ -->
+<linearGradient id="gFire" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#8B0020"/><stop offset="28%" stop-color="#DC143C"/>
+  <stop offset="58%" stop-color="#FF6B35"/><stop offset="82%" stop-color="#FFB000"/>
+  <stop offset="100%" stop-color="#FFE9A0"/>
+</linearGradient>
+<linearGradient id="gSpec" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#DC143C"/><stop offset="26%" stop-color="#FF6B35"/>
+  <stop offset="52%" stop-color="#FFB000"/><stop offset="76%" stop-color="#00E5FF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+  <animateTransform attributeName="gradientTransform" type="translate"
+    values="-1 0;1 0;-1 0" dur="9s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="gIce" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00E5FF"/><stop offset="50%" stop-color="#5B8CFF"/>
+  <stop offset="100%" stop-color="#B026FF"/>
+</linearGradient>
+<linearGradient id="gSheen" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="45%" stop-color="#fff" stop-opacity="0.10"/>
+  <stop offset="55%" stop-color="#fff" stop-opacity="0.16"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="gPanel" x1="0" y1="0" x2="0.35" y2="1">
+  <stop offset="0%" stop-color="#131A25"/><stop offset="45%" stop-color="#0B1017"/>
+  <stop offset="100%" stop-color="#05080D"/>
+</linearGradient>
+<radialGradient id="gVig" cx="50%" cy="45%" r="72%">
+  <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000" stop-opacity="0.72"/>
+</radialGradient>
+<radialGradient id="gCore">
+  <stop offset="0%" stop-color="#FFF4D6"/><stop offset="35%" stop-color="#FFB000"/>
+  <stop offset="70%" stop-color="#DC143C"/><stop offset="100%" stop-color="#3A0010" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="18%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="76%" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+
+<!-- ░ patterns ░ -->
+<pattern id="pGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+  <path d="M24 0H0V24" fill="none" stroke="#141D2A" stroke-width="1"/>
+  <circle cx="0" cy="0" r="1" fill="#1E2A3B"/>
+</pattern>
+<pattern id="pFine" width="6" height="6" patternUnits="userSpaceOnUse">
+  <path d="M6 0H0V6" fill="none" stroke="#0F1620" stroke-width=".6"/>
+</pattern>
+<pattern id="pScan" width="3" height="3" patternUnits="userSpaceOnUse">
+  <rect width="3" height="1.4" fill="#000" opacity="0.20"/>
+</pattern>
+<pattern id="pHex" width="28" height="48" patternUnits="userSpaceOnUse">
+  <path d="M14 0 L28 8 L28 24 L14 32 L0 24 L0 8 Z" fill="none" stroke="#121A26" stroke-width="1"/>
+</pattern>
+
+<!-- ░ bloom tiers ░ -->
+<filter id="fBloom" x="-40%" y="-40%" width="180%" height="180%">
+  <feGaussianBlur stdDeviation="2" result="b1"/>
+  <feGaussianBlur stdDeviation="7" result="b2"/>
+  <feGaussianBlur stdDeviation="16" result="b3"/>
+  <feMerge><feMergeNode in="b3"/><feMergeNode in="b2"/><feMergeNode in="b1"/>
+    <feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlow" x="-30%" y="-30%" width="160%" height="160%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fGlowS" x="-25%" y="-25%" width="150%" height="150%">
+  <feGaussianBlur stdDeviation="1.3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="fHalo" x="-60%" y="-60%" width="220%" height="220%">
+  <feGaussianBlur stdDeviation="14"/>
+</filter>
+
+<!-- ░ chromatic aberration ░ -->
+<filter id="fChroma" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset in="SourceGraphic" dx="-2.2" dy="0" result="r"/>
+  <feColorMatrix in="r" type="matrix" result="rc"
+    values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+  <feOffset in="SourceGraphic" dx="2.2" dy="0" result="b"/>
+  <feColorMatrix in="b" type="matrix" result="bc"
+    values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+  <feBlend in="rc" in2="bc" mode="screen" result="rb"/>
+  <feBlend in="SourceGraphic" in2="rb" mode="screen"/>
+</filter>
+
+<!-- ░ turbulence fire ░ -->
+<filter id="fFire" x="-25%" y="-45%" width="150%" height="190%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.016 0.045" numOctaves="4"
+                seed="7" result="n">
+    <animate attributeName="baseFrequency" dur="7s" repeatCount="indefinite"
+             values="0.016 0.045;0.024 0.062;0.016 0.045"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="26"
+                     xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feGaussianBlur in="d" stdDeviation="2.4" result="db"/>
+  <feMerge><feMergeNode in="db"/><feMergeNode in="d"/></feMerge>
+</filter>
+
+<!-- ░ plasma ░ -->
+<filter id="fPlasma" x="-20%" y="-20%" width="140%" height="140%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="5" seed="3" result="n">
+    <animate attributeName="seed" dur="10s" values="3;9;3" repeatCount="indefinite"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="14"
+                     xChannelSelector="R" yChannelSelector="B"/>
+</filter>
+
+<!-- ░ glitch displacement ░ -->
+<filter id="fGlitch" x="-12%" y="-12%" width="124%" height="124%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.00001 0.42" numOctaves="1"
+                seed="11" result="n">
+    <animate attributeName="baseFrequency" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1"
+             values="0.00001 0.42;0.00001 0.42;0.02 1.1;0.00001 0.42;0.03 0.9;0.00001 0.42"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R"
+                     yChannelSelector="G">
+    <animate attributeName="scale" dur="4.5s" repeatCount="indefinite"
+             keyTimes="0;0.72;0.75;0.79;0.83;1" values="0;0;18;0;13;0"/>
+  </feDisplacementMap>
+</filter>
+
+<!-- ░ CRT barrel + noise ░ -->
+<filter id="fCRT" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" result="g"/>
+  <feColorMatrix in="g" type="saturate" values="0" result="gm"/>
+  <feComponentTransfer in="gm" result="gt">
+    <feFuncA type="linear" slope="0.07"/>
+  </feComponentTransfer>
+  <feBlend in="SourceGraphic" in2="gt" mode="screen"/>
+</filter>
+
+<!-- ░ inner shadow for recessed panels ░ -->
+<filter id="fInset" x="-10%" y="-10%" width="120%" height="120%">
+  <feOffset dx="0" dy="2"/><feGaussianBlur stdDeviation="3" result="o"/>
+  <feComposite in="SourceGraphic" in2="o" operator="over"/>
+</filter>
+
+<!-- ░ metallic edge ░ -->
+<filter id="fEmboss" x="-10%" y="-10%" width="120%" height="120%">
+  <feConvolveMatrix order="3" kernelMatrix="1 0 0  0 0 0  0 0 -1"
+                    divisor="1" bias="0.02" preserveAlpha="true"/>
+</filter>
+</defs><rect width="1000" height="56" rx="7" fill="#04070B"/><rect width="1000" height="56" rx="7" fill="url(#pFine)" opacity=".7"/><rect x="0" y="0" width="1000" height="2" fill="url(#gSpec)"/><rect x="0" y="54" width="1000" height="2" fill="url(#gSpec)"/><clipPath id="mqc"><rect x="140" y="2" width="850" height="52"/></clipPath><g clip-path="url(#mqc)"><text x="0" y="35" font-size="13" letter-spacing="1.3" fill="#E6EDF3">13 PATCHES MERGED UPSTREAM   ◆   7× OWASP AGENT MEMORY GUARD   ◆   LLVM · X86 PEEPHOLE · PR #201612   ◆   LLVM · CODEGENPREPARE · PR #201443   ◆   GO · cmd/compile · #79314   ◆   APACHE SEATUNNEL · PR #11077   ◆   APACHE GRAVITINO · PR #11019   ◆   253-BYTE WASM EMITTED BY HAND   ◆   SHA-256 · 200/200 vs node:crypto   ◆   THOMPSON NFA · ReDoS IN 0.66ms   ◆   fib(20) → 6765 IN 218,913 VM STEPS   ◆   <animateTransform attributeName="transform" type="translate" values="0,0;-3236,0" dur="38s" repeatCount="indefinite"/></text><text x="3236" y="35" font-size="13" letter-spacing="1.3" fill="#E6EDF3">13 PATCHES MERGED UPSTREAM   ◆   7× OWASP AGENT MEMORY GUARD   ◆   LLVM · X86 PEEPHOLE · PR #201612   ◆   LLVM · CODEGENPREPARE · PR #201443   ◆   GO · cmd/compile · #79314   ◆   APACHE SEATUNNEL · PR #11077   ◆   APACHE GRAVITINO · PR #11019   ◆   253-BYTE WASM EMITTED BY HAND   ◆   SHA-256 · 200/200 vs node:crypto   ◆   THOMPSON NFA · ReDoS IN 0.66ms   ◆   fib(20) → 6765 IN 218,913 VM STEPS   ◆   <animateTransform attributeName="transform" type="translate" values="0,0;-3236,0" dur="38s" repeatCount="indefinite"/></text></g><linearGradient id="mqf" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#04070B"/><stop offset="100%" stop-color="#04070B" stop-opacity="0"/></linearGradient><rect x="140" y="2" width="48" height="52" fill="url(#mqf)"/><rect x="942" y="2" width="48" height="52" fill="url(#mqf)" transform="rotate(180 966 28.0)"/><path d="M0,7 L124,7 L138,28 L124,49 L0,49 Z" fill="#DC143C"/><circle cx="22" cy="28.0" r="5.5" fill="#fff" filter="url(#fGlowS)"><animate attributeName="opacity" values="1;.15;1" dur="1.05s" repeatCount="indefinite"/></circle><text x="38.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">O<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0010;0.0000;1" dur="5.0s" repeatCount="indefinite"/></text><text x="38.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">X<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0010;0.0000;1" dur="5.0s" repeatCount="indefinite"/></text><text x="38.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">Y<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0010;0.0000;1" dur="5.0s" repeatCount="indefinite"/></text><text x="38.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">I<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0010;0.0000;1" dur="5.0s" repeatCount="indefinite"/></text><text x="38.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">M<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0010;0.0000;1" dur="5.0s" repeatCount="indefinite"/></text><text x="38.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">V<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0000;0.0200;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><text x="48.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">/<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0065;0.0105;1" dur="5.0s" repeatCount="indefinite"/></text><text x="48.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">C<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0105;0.0171;0.0211;1" dur="5.0s" repeatCount="indefinite"/></text><text x="48.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">F<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0211;0.0276;0.0316;1" dur="5.0s" repeatCount="indefinite"/></text><text x="48.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">I<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0316;0.0382;0.0422;1" dur="5.0s" repeatCount="indefinite"/></text><text x="48.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">P<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0422;0.0487;0.0527;1" dur="5.0s" repeatCount="indefinite"/></text><text x="48.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">E<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0527;0.0727;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><text x="59.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">^<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0171;0.0211;1" dur="5.0s" repeatCount="indefinite"/></text><text x="59.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">6<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0211;0.0382;0.0422;1" dur="5.0s" repeatCount="indefinite"/></text><text x="59.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">N<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0422;0.0593;0.0633;1" dur="5.0s" repeatCount="indefinite"/></text><text x="59.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">Z<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0633;0.0803;0.0843;1" dur="5.0s" repeatCount="indefinite"/></text><text x="59.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">!<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0843;0.1014;0.1054;1" dur="5.0s" repeatCount="indefinite"/></text><text x="59.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">R<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1054;0.1254;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><text x="69.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">B<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0276;0.0316;1" dur="5.0s" repeatCount="indefinite"/></text><text x="69.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">3<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0316;0.0593;0.0633;1" dur="5.0s" repeatCount="indefinite"/></text><text x="69.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">5<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0633;0.0909;0.0949;1" dur="5.0s" repeatCount="indefinite"/></text><text x="69.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">3<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0949;0.1225;0.1265;1" dur="5.0s" repeatCount="indefinite"/></text><text x="69.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">Y<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1265;0.1541;0.1581;1" dur="5.0s" repeatCount="indefinite"/></text><text x="69.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">I<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1581;0.1781;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><text x="80.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">5<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0382;0.0422;1" dur="5.0s" repeatCount="indefinite"/></text><text x="80.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">#<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0422;0.0803;0.0843;1" dur="5.0s" repeatCount="indefinite"/></text><text x="80.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">M<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0843;0.1225;0.1265;1" dur="5.0s" repeatCount="indefinite"/></text><text x="80.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">Z<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1265;0.1647;0.1687;1" dur="5.0s" repeatCount="indefinite"/></text><text x="80.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">F<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1687;0.2069;0.2109;1" dur="5.0s" repeatCount="indefinite"/></text><text x="80.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">F<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2109;0.2309;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><text x="90.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">5<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0487;0.0527;1" dur="5.0s" repeatCount="indefinite"/></text><text x="90.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">O<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0527;0.1014;0.1054;1" dur="5.0s" repeatCount="indefinite"/></text><text x="90.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">=<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1054;0.1541;0.1581;1" dur="5.0s" repeatCount="indefinite"/></text><text x="90.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">B<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1581;0.2069;0.2109;1" dur="5.0s" repeatCount="indefinite"/></text><text x="90.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">&gt;<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.2109;0.2596;0.2636;1" dur="5.0s" repeatCount="indefinite"/></text><text x="90.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">I<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2636;0.2836;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><text x="101.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">R<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0593;0.0633;1" dur="5.0s" repeatCount="indefinite"/></text><text x="101.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">7<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0633;0.1225;0.1265;1" dur="5.0s" repeatCount="indefinite"/></text><text x="101.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">0<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1265;0.1858;0.1898;1" dur="5.0s" repeatCount="indefinite"/></text><text x="101.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">4<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1898;0.2490;0.2530;1" dur="5.0s" repeatCount="indefinite"/></text><text x="101.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">Y<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.2530;0.3123;0.3163;1" dur="5.0s" repeatCount="indefinite"/></text><text x="101.0" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">E<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3163;0.3363;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><text x="111.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">\<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0000;0.0698;0.0738;1" dur="5.0s" repeatCount="indefinite"/></text><text x="111.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">H<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.0738;0.1436;0.1476;1" dur="5.0s" repeatCount="indefinite"/></text><text x="111.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">?<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.1476;0.2174;0.2214;1" dur="5.0s" repeatCount="indefinite"/></text><text x="111.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">Q<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.2214;0.2912;0.2952;1" dur="5.0s" repeatCount="indefinite"/></text><text x="111.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="0">G<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.2952;0.3650;0.3690;1" dur="5.0s" repeatCount="indefinite"/></text><text x="111.5" y="33" font-size="12.5" fill="#fff" font-weight="700" opacity="1">D<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3690;0.3890;0.9500;1" dur="5.0s" repeatCount="indefinite"/></text><rect width="1000" height="56" rx="7" fill="url(#pScan)"/></svg>
